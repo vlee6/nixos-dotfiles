@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{pkgs, config, ... }:
 
 {
   imports =
@@ -67,14 +67,22 @@
     xwayland.enable = true;
   };
 
+  programs.nh = {
+    enable = true;
+    clean = {
+      enable = true;
+      extraArgs = "--keep 10";
+    };
+  };
+
   # List core packages
   environment.systemPackages = with pkgs; [
   brightnessctl
   playerctl
   hyprlock
   hyprshot
+  waybar
 
-  neovim
   wget
   vscode
   kitty
@@ -94,7 +102,7 @@
   services.displayManager.ly = {
     enable = true;
     settings = {
-      default_session = "hyprland";
+      default_session = "Hyprland";
       hide_key_hints = true;
       box_titles = null;
       hide_version_string = true;

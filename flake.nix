@@ -9,7 +9,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }: {
+  outputs = { self, nixpkgs, home-manager, ... }: {
     nixosConfigurations.hyprland = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -19,7 +19,7 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.vlee = import ./home.nix;  
+            users.vlee = import ./home/home.nix;  
             backupFileExtension = "backup"; 
           };
         }

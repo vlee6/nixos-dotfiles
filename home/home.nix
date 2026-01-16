@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{pkgs, config, lib, ...}:
 
 let
   dotfiles = "${config.home.homeDirectory}/nixos-dotfiles/config";
@@ -10,6 +10,10 @@ let
 in
 
 {
+  imports = [
+    ./modules/neovim.nix
+  ];
+
   home.username = "vlee";
   home.homeDirectory = "/home/vlee";
   home.stateVersion = "25.05";
