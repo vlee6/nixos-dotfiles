@@ -1,23 +1,22 @@
-{ pkgs, config, lib, ...}
+{ pkgs, config, lib, ...}:
 
 {
   # Install Neovim and dependencies
   home.packages = with pkgs; [
+    wl-clipboard
+    gef
+
     # Tools required for Telescope
     ripgrep
     fd
     fzf
 
-    # Language servers
-    
-    # Nix
+    # Nix language server and formatter
     nil
     nixpkgs-fmt
 
     # C/C++
-    clangd
-
-
+    clang-tools
   ];
 
   programs.neovim = {
@@ -30,9 +29,15 @@
       nvim-treesitter.withAllGrammars
       nvim-lspconfig
       mini-nvim
-      smear-cursor
+      smear-cursor-nvim
     ];
 
-  }
+    extraConfig = ''
+      set clipboard=unnamedplus
+      syntax on
+      set number
+    '';
+
+  };
 
 }

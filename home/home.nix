@@ -20,7 +20,7 @@ in
   programs.bash = {
     enable = true;
     shellAliases = {
-      nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#hyprland";
+      nrs = "~/nixos-dotfiles/scripts/nrs.sh";
     };
     profileExtra = ''
       if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
