@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ...}:
+{ pkgs, config, lib, ... }:
 
 {
   # Install Neovim and dependencies
@@ -36,6 +36,9 @@
       set clipboard=unnamedplus
       syntax on
       set number
+
+      autocmd BufWritePre *.nix silent! execute '!nixpkgs-fmt %'
+      autocmd BufWritePre *.nix edit
     '';
 
   };

@@ -13,3 +13,4 @@ nrs() {
   sudo nixos-rebuild switch --flake ~/nixos-dotfiles#hyprland
 }
 
+nrs
