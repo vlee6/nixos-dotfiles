@@ -82,7 +82,7 @@
   hyprlock
   hyprshot
   waybar
-  python
+  python3
 
   wget
   vscode
