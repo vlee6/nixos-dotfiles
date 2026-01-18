@@ -38,7 +38,21 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "secrets_dir": "secrets_dir"
+      }
+    },
+    "secrets_dir": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1768712186,
+        "narHash": "sha256-jXwlOQmv0Hm37Z/PKkioztvav4e2Zv06NXElAX418UY=",
+        "path": "/home/vlee/nixos-secrets",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/vlee/nixos-secrets",
+        "type": "path"
       }
     }
   },
