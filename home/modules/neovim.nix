@@ -36,9 +36,6 @@
       set clipboard=unnamedplus
       syntax on
       set number
-
-      autocmd BufWritePre *.nix silent! execute '!nixpkgs-fmt %'
-      autocmd BufWritePre *.nix edit
     '';
 
   };

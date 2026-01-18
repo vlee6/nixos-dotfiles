@@ -1,4 +1,4 @@
-{pkgs, config, lib, ...}:
+{ pkgs, config, lib, ... }:
 
 let
   dotfiles = "${config.home.homeDirectory}/nixos-dotfiles/config";
@@ -17,10 +17,12 @@ in
   home.username = "vlee";
   home.homeDirectory = "/home/vlee";
   home.stateVersion = "25.05";
+
   programs.bash = {
     enable = true;
     shellAliases = {
       nrs = "~/nixos-dotfiles/scripts/nrs.sh";
+      ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
     };
     profileExtra = ''
       if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
@@ -28,7 +30,6 @@ in
       fi
     '';
   };
-
 
   xdg.configFile = builtins.mapAttrs
     (name: subpath: {

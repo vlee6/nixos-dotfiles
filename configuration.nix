@@ -1,4 +1,4 @@
-{pkgs, config, ... }:
+{ pkgs, config, ... }:
 
 {
   imports =
@@ -16,7 +16,47 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  # networking.networkmanager.enable = true;
+  networking.wireless.enable = true;
+  networking.wireless.userControlled = true;
+
+  # Wifi
+  networking.wireless.networks = {
+    "MAKERSPACE" = {
+      psk="12345678";
+    };
+
+    "Harvard Secure" = {
+      auth = ''
+        key_mgmt=WPA-EAP
+        eap=TLS
+        identity="vlee@college.harvard.edu"
+        ca_cert="/etc/cert/ca.cer"
+        client_cert="/etc/cert/vlee.crt"
+        private_key="/etc/cert/vlee.key"
+        private_key_passwd="${NETWORK_KEY_PASSWORD}"
+      '';
+      priority=100;
+    };
+
+    "eduroam" = {
+      auth = ''
+        key_mgmt=WPA-EAP
+        eap=TLS
+        identity="vlee@college.harvard.edu"
+        ca_cert="/etc/cert/eduroamca.cer"
+        client_cert="/etc/cert/vlee.crt"
+        private_key="/etc/cert/vlee.key"
+	private_key_passwd="${NETWORK_KEY_PASSWORD}"
+      '';
+      priority=99;
+    };
+
+  };
+
+  networking.wireless.extraConfig = ''
+    update_config=1
+  '';
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -53,7 +93,7 @@
     isNormalUser = true;
     description = "Victor Lee";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    packages = with pkgs; [ ];
   };
 
   # Allow unfree packages
@@ -77,19 +117,21 @@
 
   # List core packages
   environment.systemPackages = with pkgs; [
-  brightnessctl
-  playerctl
-  hyprlock
-  hyprshot
-  waybar
-  python3
-
-  wget
-  vscode
-  kitty
-  waybar
-  git
-  wofi
+    brightnessctl
+    playerctl
+    hyprlock
+    hyprshot
+    waybar
+    python3
+    unzip
+    wpa_supplicant_gui
+    nix-search-tv
+    wget
+    vscode
+    kitty
+    waybar
+    git
+    wofi
   ];
 
   fonts.packages = with pkgs; [
