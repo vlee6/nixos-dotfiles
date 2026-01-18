@@ -13,7 +13,10 @@
     nixosConfigurations.hyprland = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./configuration.nix
+        ({...}: {
+          _module.args.secrets = import ./secrets.nix;
+	})
+	./configuration.nix
         home-manager.nixosModules.home-manager
         {
           home-manager = {
