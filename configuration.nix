@@ -116,7 +116,7 @@
     enable = true;
     clean = {
       enable = true;
-      extraArgs = "--keep 10";
+      extraArgs = "--keep-since 30d --keep 10";
     };
   };
 
@@ -133,7 +133,6 @@
     nix-search-tv
     wget
     vscode
-    kitty
     waybar
     git
     wofi

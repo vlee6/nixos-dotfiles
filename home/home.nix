@@ -31,6 +31,15 @@ in
     '';
   };
 
+  programs.kitty = {
+    enable = true;
+    extraConfig = ''
+      font_family JetBrainsMono Nerd Font
+      cursor_shape block
+      cursor_trail 3
+    '';
+  };
+
   xdg.configFile = builtins.mapAttrs
     (name: subpath: {
       source = create_symlink "${dotfiles}/${subpath}";
