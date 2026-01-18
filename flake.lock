@@ -45,8 +45,8 @@
     "secrets_dir": {
       "flake": false,
       "locked": {
-        "lastModified": 1768712186,
-        "narHash": "sha256-jXwlOQmv0Hm37Z/PKkioztvav4e2Zv06NXElAX418UY=",
+        "lastModified": 1768766914,
+        "narHash": "sha256-CHHlQMkcBtnNTweF21GSZ0aRxenMesiBgRX6GaSbC+w=",
         "path": "/home/vlee/nixos-secrets",
         "type": "path"
       },

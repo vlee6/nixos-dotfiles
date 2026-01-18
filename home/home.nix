@@ -22,7 +22,6 @@ in
     enable = true;
     shellAliases = {
       nrs = "~/nixos-dotfiles/scripts/nrs.sh";
-      ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
     };
     profileExtra = ''
       if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
@@ -38,6 +37,23 @@ in
       cursor_shape block
       cursor_trail 3
     '';
+  };
+
+  programs.ssh = {
+    enable = true;
+  
+    matchBlocks = {
+      "github.com" = {
+        hostname = "github.com";
+        user = "git";
+  
+        identitiesOnly = true;
+        identityFile = [
+          "~/.ssh/vleeharvard"
+          "~/.ssh/vlee6"
+        ];
+      };
+    };
   };
 
   xdg.configFile = builtins.mapAttrs

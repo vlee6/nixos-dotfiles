@@ -130,12 +130,22 @@
     python3
     unzip
     wpa_supplicant_gui
-    nix-search-tv
     wget
     vscode
-    waybar
     git
     wofi
+    # Nix search TV
+    nix-search-tv
+    fzf
+    (pkgs.writeShellApplication {
+      name = "ns";
+      runtimeInputs = with pkgs; [
+        fzf
+        nix-search-tv
+      ];
+      text = builtins.readFile "${pkgs.nix-search-tv.src}/nixpkgs.sh";
+      excludeShellChecks = [ "SC2016" ];
+    })
   ];
 
   fonts.packages = with pkgs; [
