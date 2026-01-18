@@ -14,7 +14,7 @@
       system = "x86_64-linux";
       modules = [
         ({...}: {
-          _module.args.secrets = import ./secrets.nix;
+          _module.args.secrets = import /home/vlee/nixos-secrets/secrets.nix;
 	})
 	./configuration.nix
         home-manager.nixosModules.home-manager
