@@ -7,6 +7,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    secrets = {
+      url = "path:/home/vlee/nixos-secrets";
+      flake = false;
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }: {
@@ -22,7 +26,7 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.vlee = import ./home/home.nix;  
+            users.vlee = import inputs.secrets + "/secrets.nix";
             backupFileExtension = "backup"; 
           };
         }
