@@ -17,18 +17,18 @@
   base0E = "c0a7c7";
   base0F = "b06a9b"; # Subject to change
 
-  background = base00;
-  foreground = base05;
-  current_line = base01;
-  selection = base02;
-  comment = base03;
-  
-  red = base08;
-  orange = base09;
-  yellow = base0A;
-  green = base0B;
-  aqua = base0C;
-  blue = base0D;
-  purple = base0E;
-  magenta = base0F;
+#  background = base00;
+#  foreground = base05;
+#  current_line = base01;
+#  selection = base02;
+#  comment = base03;
+#  
+#  red = base08;
+#  orange = base09;
+#  yellow = base0A;
+#  green = base0B;
+#  aqua = base0C;
+#  blue = base0D;
+#  purple = base0E;
+#  magenta = base0F;
 }

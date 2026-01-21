@@ -11,10 +11,14 @@ let
 in
 {
   imports = [
+    ./stylix.nix
+
     ./modules/neovim.nix
     ./modules/vscode.nix
   ];
 
+  programs.home-manager.enable = true;
+  
   home.username = "vlee";
   home.homeDirectory = "/home/vlee";
   home.stateVersion = "25.05";

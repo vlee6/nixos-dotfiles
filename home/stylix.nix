@@ -1,4 +1,4 @@
-{ pkgs, config, colors, ...}: 
+{ pkgs, colors, ... }: 
 
 {
   stylix = {
@@ -10,7 +10,7 @@
       base01 = colors.base01;
       base02 = colors.base02;
       base03 = colors.base03;
-      base04 = colors.bose04;
+      base04 = colors.base04;
       base05 = colors.base05;
       base06 = colors.base06;
       base07 = colors.base07;
@@ -25,12 +25,14 @@
       base0F = colors.base0F;
     };
 
+    targets.gtk.enable = true;
+
     stylix.cursor.package = pkgs.bibata-cursors;
     stylix.cursor.name = "Bibata-Modern-Classic";
 
     stylix.fonts = {
       monospace = {
-        package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
+        package = pkgs.nerd-fonts.jetbrains-mono;
 	name = "JetBrainsMono Nerd Font Mono";
       };
       sansSerif = {
@@ -42,7 +44,8 @@
 	name = "DejaVu Serif";
       };
     };
-
-
   };
+
+  gtk.enable = true;
+
 }

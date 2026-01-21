@@ -7,23 +7,25 @@
 
   programs.vscode = {
     enable = true;
-    package = pkgs.vscode.fhs; # Necessary for plugins requiring FHS compiancy  
-
+    
+    # Necessary for plugins requiring FHS compiancy  
+    package = pkgs.vscode.fhsWithPackages (ps: with ps; [
+      # Dependencies in FHS environment go here
+    ]);
+    
     extensions = with pkgs.vscode-extensions; [
       # Vim
-      vscodevim.vim
-      
+      asvetliakov.vscode-neovim
+
       # Tools
       ms-vscode.live-server
 
       # Languages
       ms-python.python
       ms-vscode.cpptools-extension-pack
-
+      
+      # PlatformIO
+      platformio.platformio-vscode-ide
     ];
-
-    progams.vscode.package = pkgs.vscode.fhsWithPackages (ps: with ps; [
-      # Dependencies in FHS environment go here
-    ]);
   };
 }
