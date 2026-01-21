@@ -1,17 +1,18 @@
 { pkgs, config, lib, ... }:
 
 let
-  dotfiles = "${config.home.homeDirectory}/nixos-dotfiles/config";
+  dotfiles_config = "${config.home.homeDirectory}/nixos-dotfiles/config";
+  
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
   configs = {
     hypr = "hypr";
     waybar = "waybar";
   };
 in
-
 {
   imports = [
     ./modules/neovim.nix
+    ./modules/vscode.nix
   ];
 
   home.username = "vlee";
@@ -33,7 +34,6 @@ in
   programs.kitty = {
     enable = true;
     extraConfig = ''
-      font_family JetBrainsMono Nerd Font
       cursor_shape block
       cursor_trail 3
     '';
@@ -59,7 +59,7 @@ in
 
   xdg.configFile = builtins.mapAttrs
     (name: subpath: {
-      source = create_symlink "${dotfiles}/${subpath}";
+      source = create_symlink "${dotfiles_config}/${subpath}";
       recursive = true;
     })
     configs;

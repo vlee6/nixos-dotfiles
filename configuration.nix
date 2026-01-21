@@ -122,18 +122,25 @@
 
   # List core packages
   environment.systemPackages = with pkgs; [
+    # System
     brightnessctl
     playerctl
-    hyprlock
-    hyprshot
-    waybar
-    python3
-    unzip
     wpa_supplicant_gui
-    wget
-    vscode
-    git
+    
+    # Ricing 
+    hyprlock
+    waybar
     wofi
+
+    # Essential Tools
+    hyprshot
+    unzip
+    git
+    coreutils
+
+    # Languages
+    python3
+    
     # Nix search TV
     nix-search-tv
     fzf
@@ -169,6 +176,8 @@
   services.pipewire.enable = true;
 
   services.blueman.enable = true;
+  
+  environment.sessionVariables.NIXOS_OZONE_WL = "1"; # Necessary for vscode under wayland
 
   system.stateVersion = "25.11";
 

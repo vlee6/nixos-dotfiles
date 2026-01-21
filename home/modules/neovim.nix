@@ -1,7 +1,6 @@
 { pkgs, config, lib, ... }:
 
 {
-  # Install Neovim and dependencies
   home.packages = with pkgs; [
     wl-clipboard
     gef
