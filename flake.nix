@@ -48,6 +48,8 @@
             useGlobalPkgs = true;
             useUserPackages = true;
 
+	    stylix.enable = true;
+
             extraSpecialArgs = {
 	      inherit colors;
 	    };
