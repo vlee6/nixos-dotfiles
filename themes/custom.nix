@@ -67,20 +67,24 @@
         package = pkgs.nerd-fonts.jetbrains-mono;
         name = "JetBrains Mono Nerd Font";
       };
+
       sansSerif = {
-        package = pkgs.dejavu_fonts;
-        name = "Dejavu Sans";
+        package = pkgs.roboto;
+        name = "Roboto";
       };
+
       serif = config.stylix.fonts.sansSerif;
+
       emoji = {
         package = pkgs.noto-fonts-color-emoji;
         name = "Noto Color Emoji";
       };
+
       sizes = {
-        applications = 13;
-        desktop = 13;
-        popups = 13;
-        terminal = 13;
+        applications = 12;
+        desktop = 12;
+        popups = 12;
+        terminal = 12;
       };
     };
 
