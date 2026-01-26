@@ -1,4 +1,4 @@
-{ config, ... }: {
+{config, ...}: {
   imports = [
     # System configuration
     ../../nixos/audio.nix
@@ -7,6 +7,7 @@
     ../../nixos/fonts.nix
     ../../nixos/home-manager.nix
     ../../nixos/hyprland.nix
+    ../../nixos/ly.nix
     ../../nixos/nix.nix
     ../../nixos/nix-search-tv.nix
     ../../nixos/systemd-boot.nix

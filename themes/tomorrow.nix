@@ -44,7 +44,7 @@
       base04 = "a7a8a7"; # Dark Foreground (Use for status bars)
       base05 = "d7dad8"; # Default Foreground
       base06 = "d7dad8"; # Light Foreground (Not often used)
-      base07 = "27292c"; # Light Background (Not often used)
+      base07 = "1f1f1f"; # Originally light Background, switched to dark background
 
       base08 = "d77c79"; # Error
       base09 = "e6a472"; # Urgent
