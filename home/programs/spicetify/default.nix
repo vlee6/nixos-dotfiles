@@ -1,0 +1,30 @@
+{ pkgs, config, lib, inpits, ... }: let
+  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+  accent = "${config.lib.stylixcolors.base0B}";
+  background = "${config.lib.stylix.colors.base00}";
+in {
+  imports = [inputs.spicetify-nix.homeManagerModules.default];
+
+  stylix.targets.spicetify.enable = false;
+
+  programs.spicetify = {
+    enable = true;
+    theme = lib.mkForce spicePkgs.themes.text;
+
+    colorScheme = "custom";
+
+    customColorScheme = {
+      button = accent;
+      button-active = accent;
+      tab-active = accent;
+      player = background;
+      main = background;
+      sidebar = background;
+    };
+
+    enabledExtensions = with spicePkgs.extensions; [
+      adblock
+      hidePodcasts
+    ];
+  };
+}
