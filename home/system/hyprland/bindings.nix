@@ -1,54 +1,55 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   wayland.windowManager.hyprland.settings = {
-    "$mod" = "SUPER";
+    "$mainMod" = "SUPER";
     "$shiftMod" = "SUPER_SHIFT";
- 
-    bind = [
-      # Essential binds
-      "$mainMod, Q, exec, uwsm app -- ${pkgs.ghostty}/bin/ghossty"
-      "$mainMod, F, exec, uwsm app -- ${pkgs.yazi}/bin/yazi"
-      "$mainMod, SPACE, exec, uwsm app --${pkgs.wofi}/bin/wofi"
-      
-      "$mainMod, V, togglefloating"
-      "$mainMod, J, togglesplit"
-      "$mainMod, W, killactive"
-      
-      "$mainMod, L, exec, systemctl suspend"
- 
-      # Move focus
-      "$mainMod, left, movefocus, l"
-      "$mainMod, right, movefocus, r"
-      "$mainMod, up, movefocus, r"
-      "$mainMod, down, movefocus, d"
 
-      # Special workspaces
-      "$mainMod, S, togglespecialworkspace, magic"
-      "mainMod CTRL, S movetoworkspace, special:magic"
+    bind =
+      [
+        # Essential binds
+        "$mainMod, Q, exec, ghostty"
+        "$mainMod, F, exec, yazi"
+        "$mainMod, SPACE, exec, fuzzel"
 
-      # Switch monitor
-      "$mainMod SHIFT, MINUS, movecurrentworkspacetomonitor, -1"
-      
-      # Screenshot
-      "$mainMod SHIFT, S, exec, hyprshot -m region --clipboard"
-      "$mainMod CTRL SHIFT, S, exec, hyprshot -m region"
+        "$mainMod, V, togglefloating"
+        "$mainMod, J, togglesplit"
+        "$mainMod, W, killactive"
 
-      # Connect to bluetooh
-      "$mainMod, B, exec, bluetoothctl devices Paired | head -n 1 | awk '{print $2}' | xargs bluetoothctl connect"
-      "$mainMod SHIFT, B, exec, bluetoothctl devices Connected | awk '{print $2}' | xargs -I{} bluetoothctl disconnect {}"
-    ];
+        "$mainMod, L, exec, systemctl suspend"
+
+        # Move focus
+        "$mainMod, left, movefocus, l"
+        "$mainMod, right, movefocus, r"
+        "$mainMod, up, movefocus, r"
+        "$mainMod, down, movefocus, d"
+
+        # Special workspaces
+        "$mainMod, S, togglespecialworkspace, special:magic"
+        "$mainMod CTRL, S, movetoworkspace, special:magic"
+
+        # Switch monitor
+        "$mainMod SHIFT, MINUS, movecurrentworkspacetomonitor, -1"
+
+        # Screenshot
+        "$mainMod SHIFT, S, exec, hyprshot -m region --clipboard"
+        "$mainMod CTRL SHIFT, S, exec, hyprshot -m region"
+
+        # Connect to bluetooh
+        "$mainMod, B, exec, bluetoothctl devices Paired | head -n 1 | awk '{print $2}' | xargs bluetoothctl connect"
+        "$mainMod SHIFT, B, exec, bluetoothctl devices Connected | awk '{print $2}' | xargs -I{} bluetoothctl disconnect {}"
+      ]
       ++ (builtins.concatLists (builtins.genList (i: let
-        ws = i + 1;
-      in [
-        "$mod,code:1${toString i}, workspace, ${toString ws}"
- 	"$mod SHIFT,code:1${toString i}, movetoworkspace, ${toString ws}"
-      ])
-      9));
- 
+          ws = i + 1;
+        in [
+          "$mainMod,code:1${toString i}, workspace, ${toString ws}"
+          "$mainMod SHIFT,code:1${toString i}, movetoworkspace, ${toString ws}"
+        ])
+        9));
+
     # Lid and media input
     bindl = [
       # Locking
-      "switch:off:Lid Switch, exec, hyprlock --immediate"
-      "switch:on:Lid Switch, exec, hyprlock --immediate"
+      ", switch:off:Lid Switch, exec, hyprlock"
+      ", switch:on:Lid Switch, exec, hyprlock"
 
       # Media controls
       ", XF86AudioNext, exec, playerctl next"
@@ -73,9 +74,6 @@
       # Move and resize
       "$mainMod, mouse:272, movewindow"
       "$mainMod, mouse:273, resizewindow"
-
-      # Disable middle click paste
-      ", mouse:274, exec, "
-    ]
-  }; 
+    ];
+  };
 }

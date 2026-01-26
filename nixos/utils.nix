@@ -2,9 +2,9 @@
   hostname = config.var.hostname;
   keyboardLayout = config.var.keyboardLayout;
   configDir = config.var.configDirectory;
-  timeZone = config.var.tieZone;
+  timeZone = config.var.timeZone;
   defaultLocale = config.var.defaultLocale;
-  autoUpgrade = config.var.autoUpgrade
+  autoUpgrade = config.var.autoUpgrade;
 in {
   system.autoUpgrade = {
     enable = autoUpgrade;
@@ -12,9 +12,9 @@ in {
     flake = "${configDir}";
     flags = "--update-input" "nixpkgs" "--commit-lock-file";
     allowReboot = false;
-  }
+  };
 
-  time = {timeZone = timeZone};
+  time = { timeZone = timeZone; };
   i18n.defaultLocale = defaultLocale;
   i18n.extraLocaleSettings = {
     LC_ADDRESS = defaultLocale;
@@ -49,7 +49,7 @@ in {
     TERMINAL = "kitty";
     TERM = "kitty";
     BROWSER = "firefox";
-  }
+  };
 
   services.libinput.enable = true;
   programs.dconf.enable = true;
@@ -78,7 +78,6 @@ in {
     curl
     gnupg
     openssl
-    vim
     go
     comma
     zip
@@ -107,6 +106,6 @@ in {
 
     rtkit.enable = true;
 
-    sudowheelNeedsPassword = false;
+    sudo.wheelNeedsPassword = false;
   };
 }

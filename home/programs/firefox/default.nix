@@ -22,11 +22,11 @@
 	}
 	{
           name = "Peoplesoft";
-	  url = "https://peoplesoft.hrapps.harvard.edu"
+	  url = "https://peoplesoft.hrapps.harvard.edu";
 	}
       ];
 
-      extensions = with inputs.firefox-addons.package.${pkgs.stdenv.hostPlatform.system}; [
+      extensions = with inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
         ublock-origin
         ctrl-number-to-switch-tabs
       ];

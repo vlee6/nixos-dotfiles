@@ -1,5 +1,5 @@
 { config, inputs, ... }: let
-  autoGarbageCollector = confi.var.autoGarbageCollector;
+  autoGarbageCollector = config.var.autoGarbageCollector;
 in {
   security.sudo.extraRules = [
     {
@@ -23,7 +23,7 @@ in {
       warn-dirty = false
     '';
     settings = {
-      experimental-features = ["nixcommands" "flakes"];
+      experimental-features = ["nix-command" "flakes"];
       download-buffer-size = 262144000;
       auto-optimise-store = true;
       substituters = [

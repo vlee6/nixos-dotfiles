@@ -3,14 +3,14 @@
     utility = {
       surround.enable = true;
       leetcode-nvim.enable = true;
+
+      motion = {
+        leap.enable = true;
+      };
     };
 
     notes = {
       todo-comments.enable = true;
-    };
-
-    motion = {
-      leap.enable = true;
     };
 
     ui = {

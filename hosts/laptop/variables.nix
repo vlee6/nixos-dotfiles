@@ -1,9 +1,10 @@
 { config, lib, ... }: {
   imports = [
-    # Insert theme here
-  ]
+    # Choose theme here
+    ../../themes/tomorrow.nix
+  ];
 
-  cofig.var = {
+  config.var = {
     hostname = "laptop";
     username = "vlee";
     configDirectory = 

@@ -1,9 +1,16 @@
-{ pkgs, config, lib, ... }: let
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}: let
   rounding = config.theme.rounding;
-  gaps_in = config.theme.gaps-in;
-  gaps_out = config.theme.gaps-out;
+  gaps_in = config.theme.gaps_in;
+  gaps_out = config.theme.gaps_out;
   active_border = config.theme.active_border;
   inactive_border = config.theme.inactive_border;
+  active_opacity = config.theme.active_opacity;
+  inactive_opacity = config.theme.inactive_opacity;
   dim_inactive = config.theme.dim_inactive;
   dim_strength = config.theme.dim_strength;
   shadow = config.theme.shadow;
@@ -35,16 +42,17 @@ in {
     libva
     dconf
     imv
-    
+
     hyprshot
     hyprpicker
     hyprlock
     hypridle
     wf-recorder
-    
+
+    swaybg
+
     brightnessctl
     playerctl
-    wpctl
   ];
 
   wayland.windowManager.hyprland = {
@@ -62,7 +70,8 @@ in {
     settings = {
       exec-once = [
         "dbus-update-activation-environment --systemd --all &"
-	"hypridle"
+        "waybar"
+        "hypridle"
       ];
 
       monitor = [
@@ -70,7 +79,7 @@ in {
         "HDMI-A-1, 1920x1080@75, -100x0, 1"
         "DP-5, 1920x1080@75, -100x0, 1"
         "DP-6, 1920x1080@75, -100x0, 1"
-	"DP-7, 1920x1080@75, -100x0, 1"
+        "DP-7, 1920x1080@75, -100x0, 1"
       ];
 
       env = [
@@ -99,91 +108,85 @@ in {
 
       cursor = {
         no_hardware_cursors = true;
-	default_monitor "eDP-1";
       };
 
       general = {
         resize_on_border = true;
-	gaps_in = gaps_in;
-	gaps_out = gaps_out;
-	border_size = border_size;
-	layout = "master";
-	"col.active_border" = lib.mkForce active_border;
-	"col.inactive_border" = lib.mkForce inactive_border;
+        gaps_in = gaps_in;
+        gaps_out = gaps_out;
+        border_size = border_size;
+        layout = "master";
+        "col.active_border" = lib.mkForce active_border;
+        "col.inactive_border" = lib.mkForce inactive_border;
       };
 
       decoration = {
         active_opacity = active_opacity;
-	inactive_opacity = inactive_opacity;
-	dim_inactive = 
-	  if dim_inactive
-	  then "true"
-	  else "false";
-	dim_strength = dim_strength;
-	rounding = rounding;
-	shadow = {
-          enabled = 
-	    if shadow
-	    then "true"
-	    else "false";
-	  range = 20;
-	  render_power = 3;
-	};
-	blur = {
-          enabled = 
-	    if blur
-	    then "true";
-	    else "false";
-	  size = 18;
-	};
-      };
-      
-      master = {
-        new_status = true;
-	allow_small_split = true;
-	mfact = 0.5;
+        inactive_opacity = inactive_opacity;
+        dim_inactive =
+          if dim_inactive
+          then "true"
+          else "false";
+        dim_strength = dim_strength;
+        rounding = rounding;
+        shadow = {
+          enabled =
+            if shadow
+            then "true"
+            else "false";
+          range = 20;
+          render_power = 3;
+        };
+        blur = {
+          enabled =
+            if blur
+            then "true"
+            else "false";
+          size = 18;
+        };
       };
 
+      master = {
+        new_status = true;
+        allow_small_split = true;
+        mfact = 0.5;
+      };
 
       gesture = [
         "3, vertical, workspace"
-        "gesture = 3, left, dispatcher, sendshortcut, CTRL, Page_Up, active_window"
-	"gesture = 3, right, dispatcher, sendshortcut, CTRL, Page_Down, active_window"
-      ];
-
-      windowrule = [
-        "suppressevent maximize, class:.*"
-	"nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
-        ""
+        "3, left, dispatcher, sendshortcut, CTRL, Page_Up, active_window"
+        "3, right, dispatcher, sendshortcut, CTRL, Page_Down, active_window"
       ];
 
       misc = {
         force_default_wallpaper = 1;
         vfr = true;
-	disable_hyprland_logo = true;
-	disable_splash_rendering = true;
-	focus_on_activate = true;
-	middle-click_paste = false;
+        disable_hyprland_logo = true;
+        disable_splash_rendering = true;
+        focus_on_activate = true;
       };
 
       input = {
-        kb_layout = keyboardLayout;
-	follow_mouse = 1;
-	sensitivity = 0;
+        kb_layout = kb_layout;
+        follow_mouse = 1;
+        sensitivity = 0;
 
-        touchpad {
+        touchpad = {
           scroll_factor = 0.35;
           natural_scroll = true;
-	  clickfinger_behavior = true;
+          clickfinger_behavior = true;
         };
-
-        device = [
-          {
-	    name = "razer-razer-viper-ultimate-dongle-1";
-	    sensitivity = -0.9;
-          }
-        ];
       };
+
+      # Smart gaps
+      extraConfig = ''
+        workspace = w[tv1]s[false], gapsout:0, gapsin:0
+        workspace = f[1]s[false], gapsout:0, gapsin:0
+        windowrule = border_size 0, match:float 0, match:workspace w[tv1]s[false]
+        windowrule = rounding 0, match:float 0, match:workspace w[tv1]s[false]
+        windowrule = border_size 0, match:float 0, match:workspace f[1]s[false]
+        windowrule = rounding 0, match:float 0, match:workspace f[1]s[false]
+      '';
     };
   };
 }

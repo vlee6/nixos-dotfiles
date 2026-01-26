@@ -8,9 +8,9 @@
     then "2.5"
     else "1.5";
   borderDuration = 
-    if animationSpeed = "slow"
+    if animationSpeed == "slow"
     then "10"
-    else if animationSpeed = "medium"
+    else if animationSpeed == "medium"
     then "6"
     else "3";
 in {

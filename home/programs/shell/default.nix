@@ -4,7 +4,7 @@ in {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    autosuggestions.enable = true;
+    autosuggestion.enable = true;
     historySubstringSearch.enable = true;
 
     syntaxHighlighting = {
@@ -19,7 +19,7 @@ in {
     };
 
     shellAliases = {
-      nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#hyprland"; 
+      nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#laptop"; 
     };
 
     profileExtra = ''

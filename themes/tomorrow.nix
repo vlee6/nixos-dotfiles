@@ -1,13 +1,18 @@
-{ lib, pkgs, config, ... }: {
-  options.theme = lib.mkOptions {
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}: {
+  options.theme = lib.mkOption {
     type = lib.types.attrs;
     default = {
       rounding = 4;
       gaps_in = 5;
       gaps_out = 9;
 
-      active_border = rgba(35383cff);
-      inactive_border = rgba(ffffff00);
+      active_border = "rgba(35383cff)";
+      inactive_border = "rgba(ffffff00)";
       active_opacity = 1;
       inactive_opacity = 1;
       dim_inactive = true;
@@ -21,7 +26,7 @@
       animation_speed = "fast";
       fetch = "none";
 
-      textColorOnWallpaper = 
+      textColorOnWallpaper =
         config.lib.stylix.colors.base00;
     };
 
@@ -40,7 +45,7 @@
       base05 = "d7dad8"; # Default Foreground
       base06 = "d7dad8"; # Light Foreground (Not often used)
       base07 = "27292c"; # Light Background (Not often used)
-    
+
       base08 = "d77c79"; # Error
       base09 = "e6a472"; # Urgent
       base0A = "f4cf86"; # Warning
@@ -60,26 +65,27 @@
     fonts = {
       monospace = {
         package = pkgs.nerd-fonts.jetbrains-mono;
-	name = "JetBrains Mono Nerd Font";
+        name = "JetBrains Mono Nerd Font";
       };
       sansSerif = {
         package = pkgs.dejavu_fonts;
-	name = "Dejavu Sans";
+        name = "Dejavu Sans";
       };
       serif = config.stylix.fonts.sansSerif;
       emoji = {
         package = pkgs.noto-fonts-color-emoji;
-	name = "Noto Color Emoji;"
+        name = "Noto Color Emoji";
       };
       sizes = {
         applications = 13;
-	desktop = 13;
-	popups = 13;
-	terminal = 13;
+        desktop = 13;
+        popups = 13;
+        terminal = 13;
       };
     };
 
-    polarity = "dark";
+    image = ./wallpapers/black.png;
 
+    polarity = "dark";
   };
 }

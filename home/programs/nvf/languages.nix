@@ -1,4 +1,8 @@
-{ lib, pkgs, ... }: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   programs.nvf.settings.vim = {
     # Learn more about nvim diagnostics
     diagnostics = {
@@ -8,7 +12,7 @@
     };
 
     syntaxHighlighting = true;
-    
+
     treesitter = {
       enable = true;
       autotagHtml = true;
@@ -21,31 +25,31 @@
 
     lsp = {
       enable = true;
-      trouble.enable = true;
-      lspSignature.enable = true;
+      trouble.enable = false;
+      lspSignature.enable = false;
       lspconfig.enable = true;
-      formatOnSave= true;
+      formatOnSave = true;
       inlayHints.enable = true;
       null-ls.enable = true;
       servers.nixd.settings.nil.nix.autoArchive = true;
-      lspkind.enable = true;
+      lspkind.enable = false;
 
       otter-nvim = {
         enable = true;
-	setupOpts = {
+        setupOpts = {
           buffers.set_filetype = true;
-	  lsp = {
+          lsp = {
             diagnostic_update_event = [
               "BufWritePost"
-	      "InsertLeave"
-	    ];
-	  };
-	};
+              "InsertLeave"
+            ];
+          };
+        };
       };
     };
 
     languages = {
-      enableDap = true;
+      enableDAP = true;
       enableExtraDiagnostics = true;
       enableFormat = true;
       enableTreesitter = true;
@@ -56,7 +60,7 @@
       clang.enable = true;
       assembly.enable = true;
       java.enable = true;
-      python.eable = true;
+      python.enable = true;
 
       html.enable = true;
       css.enable = true;
@@ -64,13 +68,13 @@
 
       markdown = {
         enable = true;
-	format.type = ["prettierd"];
-	extensions = {
+        format.type = ["prettierd"];
+        extensions = {
           markview-nvim = {
-	    enable = true
-	  };
-	};
-	extraDiagnostics.enable = true;
+            enable = true;
+          };
+        };
+        extraDiagnostics.enable = true;
       };
     };
 
@@ -81,7 +85,7 @@
     };
 
     autocomplete = {
-      nvim-cmp.enable = true;
+      nvim-cmp.enable = false;
     };
   };
 }

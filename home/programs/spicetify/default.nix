@@ -1,6 +1,6 @@
-{ pkgs, config, lib, inpits, ... }: let
+{ pkgs, config, lib, inputs, ... }: let
   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-  accent = "${config.lib.stylixcolors.base0B}";
+  accent = "${config.lib.stylix.colors.base0B}";
   background = "${config.lib.stylix.colors.base00}";
 in {
   imports = [inputs.spicetify-nix.homeManagerModules.default];

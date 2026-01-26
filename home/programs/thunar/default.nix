@@ -1,5 +1,5 @@
 { pkgs, config, ... }: let
-  user = config.var.user;
+  user = config.var.username;
 in {
   home.packages = with pkgs; [
     thunar
@@ -118,7 +118,7 @@ in {
     <?xml version="1.0" encoding="UTF-8"?>
     <actions>
       <action>
-          <icon>utilities-terminal</icon>
+     :     <icon>utilities-terminal</icon>
           <name>Open Terminal Here</name>
           <unique-id>1700000000000001</unique-id>
           <command>ghostty --working-directory=%f</command>
@@ -152,5 +152,4 @@ in {
       </action>
     </actions>
   '';
-}
 }
