@@ -5,7 +5,7 @@
   ...
 }: let
   radius = config.theme.rounding;
-  background = config.lib.stylix.colors.base07 + "77";
+  background = config.lib.stylix.colors.base07 + "FF";
 in {
   programs.fuzzel = {
     enable = true;
@@ -17,7 +17,7 @@ in {
         width = 0;
         radius = radius;
       };
-      colors.background = background;
+      colors.background = lib.mkForce background;
     };
   };
 }

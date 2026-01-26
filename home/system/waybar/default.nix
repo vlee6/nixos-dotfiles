@@ -38,11 +38,11 @@
 
         cpu = {
           format = "CPU: {usage}%";
-          tooltip = false;
         };
 
         memory = {
           format = "mem: {used}gib";
+          tooltip = false;
         };
 
         battery = {
