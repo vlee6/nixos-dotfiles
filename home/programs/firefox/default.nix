@@ -1,36 +1,64 @@
-{ pkgs, inputs, ... }: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.firefox = {
     enable = true;
 
-    profiles.vlee = {
-      bookmarks = [
+    policies = {
+      Bookmarks = [
         {
-	  name = "Gmail";
-	  url = "https://mail.google.com/mail/u/0/#inbox";
-	}
-	{
-          name = "Docs";
-          url = "https://docs.google.com/document/u/0/?tgif=d";
-	}
-	{
-          name = "Canvas";
-	  url = "https://canvas.harvard.edu";
-	}
-	{
-	  name = "my.harvard";
-	  url = "https://portal.my.harvard.edu/psp/hrvihprd/EMPLOYEE/EMPL/h/?tab=HU_SSS";
-	}
-	{
-          name = "Peoplesoft";
-	  url = "https://peoplesoft.hrapps.harvard.edu";
-	}
-      ];
+          Title = "Gmail";
+          URL = "https://mail.google.com/mail/u/0/#inbox";
+          Placement = "toolbar";
+        }
+        {
+          Title = "Docs";
+          URL = "https://docs.google.com/document/u/0/?tgif=d";
+          Placement = "toolbar";
+        }
+        {
+          Title = "Canvas";
+          URL = "https://canvas.harvard.edu";
+          Placement = "toolbar";
+        }
+        {
+          Title = "my.harvard";
+          URL = "https://portal.my.harvard.edu/psp/hrvihprd/EMPLOYEE/EMPL/h/?tab=HU_SSS";
+          Placement = "toolbar";
+        }
+        {
+          Title = "Peoplesoft";
+          URL = "https://peoplesoft.hrapps.harvard.edu";
+          Placement = "toolbar";
+        }
 
-      extensions = with inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
-        ublock-origin
-        ctrl-number-to-switch-tabs
+        {
+          Title = "Classes";
+          Placement = "toolbar";
+        }
+        {
+          Title = "CS1200";
+          URL = "https://edstem.org/us/courses/89686/discussion";
+          Folder = "Classes";
+        }
       ];
     };
 
+    profiles = {
+      vlee = {
+        id = 0;
+        name = "vlee";
+        isDefault = true;
+
+        extensions.packages = with inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
+          ublock-origin
+          ctrl-number-to-switch-tabs
+        ];
+      };
+    };
   };
+
+  stylix.targets.firefox.profileNames = ["vlee"];
 }

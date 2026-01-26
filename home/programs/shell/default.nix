@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }: let
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: let
   fetch = config.theme.fetch; # Run fetch on startup?
 in {
   programs.zsh = {
@@ -19,13 +24,7 @@ in {
     };
 
     shellAliases = {
-      nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#laptop"; 
+      nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#laptop";
     };
-
-    profileExtra = ''
-      if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-        exec hyprland
-      fi
-    '';
   };
 }

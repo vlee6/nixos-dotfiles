@@ -115,7 +115,7 @@ in {
         gaps_in = gaps_in;
         gaps_out = gaps_out;
         border_size = border_size;
-        layout = "master";
+        layout = "dwindle";
         "col.active_border" = lib.mkForce active_border;
         "col.inactive_border" = lib.mkForce inactive_border;
       };
@@ -152,6 +152,11 @@ in {
         mfact = 0.5;
       };
 
+      dwindle = {
+        pseudotile = true;
+        preserve_split = true;
+      };
+
       gesture = [
         "3, vertical, workspace"
         "3, left, dispatcher, sendshortcut, CTRL, Page_Up, active_window"
@@ -178,5 +183,15 @@ in {
         };
       };
     };
+
+    # Smart gaps
+    extraConfig = ''
+      workspace = w[tv1]s[false], gapsout:0, gapsin:0
+      workspace = f[1]s[false], gapsout:0, gapsin:0
+      windowrule = border_size 0, match:float 0, match:workspace w[tv1]s[false]
+      windowrule = rounding 0, match:float 0, match:workspace w[tv1]s[false]
+      windowrule = border_size 0, match:float 0, match:workspace f[1]s[false]
+      windowrule = rounding 0, match:float 0, match:workspace f[1]s[false]
+    '';
   };
 }

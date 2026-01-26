@@ -17,6 +17,7 @@
     # System
     ../../home/system/fuzzel
     ../../home/system/hyprland
+    ../../home/system/hyprpaper
     ../../home/system/ssh
     ../../home/system/udiskie
     ../../home/system/waybar

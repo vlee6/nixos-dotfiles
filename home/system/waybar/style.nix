@@ -20,6 +20,7 @@
 
     window#waybar {
       /* background-color: #${bg}; */
+      background-color: transparent;
     }
 
     #workspaces button {

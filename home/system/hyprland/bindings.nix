@@ -23,7 +23,7 @@
         "$mainMod, down, movefocus, d"
 
         # Special workspaces
-        "$mainMod, S, togglespecialworkspace, special:magic"
+        "$mainMod, S, togglespecialworkspace, magic"
         "$mainMod CTRL, S, movetoworkspace, special:magic"
 
         # Switch monitor
