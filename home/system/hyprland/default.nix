@@ -16,7 +16,6 @@
   shadow = config.theme.shadow;
   blur = config.theme.blur;
   border_size = config.theme.border_size;
-  animation_speed = config.theme.animation_speed;
   kb_layout = config.var.keyboardLayout;
 in {
   imports = [

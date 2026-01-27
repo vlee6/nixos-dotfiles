@@ -1,12 +1,12 @@
-{pkgs, ...}: {
+{
   wayland.windowManager.hyprland.settings = {
     "$mainMod" = "SUPER";
 
     bind =
       [
         # Essential binds
-        "$mainMod, Q, exec, ghostty"
-        "$mainMod, F, exec, yazi"
+        "$mainMod, Q, exec, ghostty --working-directory=~"
+        "$mainMod, F, exec, ghostty -e yazi"
         "$mainMod, SPACE, exec, fuzzel"
 
         "$mainMod, V, togglefloating"
@@ -38,6 +38,10 @@
         # Connect to bluetooh
         "$mainMod, B, exec, bluetoothctl devices Paired | head -n 1 | awk '{print $2}' | xargs bluetoothctl connect"
         "$mainMod SHIFT, B, exec, bluetoothctl devices Connected | awk '{print $2}' | xargs -I{} bluetoothctl disconnect {}"
+
+        # Workspace 10
+        "$mainMod, 0, workspace, 10"
+        "$mainMod SHIFT, 0, movetoworkspace, 10"
       ]
       ++ (builtins.concatLists (builtins.genList (i: let
           ws = i + 1;

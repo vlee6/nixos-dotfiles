@@ -4,7 +4,7 @@
     installVimSyntax = true;
     enableZshIntegration = true;
     settings = {
-      custom-shader = "./shaders/cursor_warp.glsl";
+      custom-shader = "${./shaders/cursor_warp.glsl}";
     };
   };
 }
