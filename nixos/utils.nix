@@ -90,6 +90,7 @@ in {
     btop
     unrar
     p7zip
+    cacert
   ];
 
   xdg.portal = {

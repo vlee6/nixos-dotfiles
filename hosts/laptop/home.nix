@@ -5,6 +5,7 @@
 }: {
   imports = [
     # Programs
+    ../../home/programs/anki
     ../../home/programs/firefox
     ../../home/programs/ghostty
     ../../home/programs/git

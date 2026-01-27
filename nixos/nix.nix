@@ -1,4 +1,8 @@
-{ config, inputs, ... }: let
+{
+  config,
+  inputs,
+  ...
+}: let
   autoGarbageCollector = config.var.autoGarbageCollector;
 in {
   security.sudo.extraRules = [
@@ -6,9 +10,9 @@ in {
       users = [config.var.username];
       commands = [
         {
-	  command = "/run/current-system/sw/bin/nixos-rebuild";
-	  options = ["NOPASSWD"];
-	}
+          command = "/run/current-system/sw/bin/nixos-rebuild";
+          options = ["NOPASSWD"];
+        }
       ];
     }
   ];
@@ -29,9 +33,9 @@ in {
       substituters = [
         "https://cache.nixos.org?priority=10"
 
-	"https://hyprland.cachix.org"
-	"https://nix-communinty.cachix.org"
-	"https://numtide.cachix.org"
+        "https://hyprland.cachix.org"
+        "https://nix-community.cachix.org"
+        "https://numtide.cachix.org"
       ];
       trusted-public-keys = [
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="

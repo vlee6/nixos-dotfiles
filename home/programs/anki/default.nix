@@ -1,14 +1,16 @@
 {pkgs, ...}: let
   chineseSupport3 = pkgs.stdenv.mkDerivation {
     pname = "chinese-support-3";
-    version = "2024-02-25";
+    version = "0.17.1";
 
-    src = pkgs.fetchFromGitHub {
-      owner = "Gustaf-C";
-      repo = "anki-chinese-support-3";
-      rev = "v0.16.1";
-      hash = "sha256-RInP6lG/y00Uq5p55T6v8G5T5k9U1Y5m8G4j4l3n2m1="; # Replace with actual hash
+    src = pkgs.fetchgit {
+      url = "https://github.com/Gustaf-C/anki-chinese-support-3.git";
+      rev = "0.17.1";
+      hash = "sha256-23zS3nqo3U0NMVjnAS0Jp9hcCMqVgk1P/vJ+j8ZsSFU=";
     };
+
+    dontBuild = true;
+    dontCheck = true;
 
     installPhase = ''
       mkdir -p $out
@@ -18,7 +20,7 @@
 in {
   programs.anki = {
     enable = true;
-    package = pkgs.anki-bin;
+    package = pkgs.anki;
     addons = [
       chineseSupport3
     ];
