@@ -1,6 +1,4 @@
 {
-  services.upower.enable = true;
-
   services.batsignal = {
     enable = true;
     extraArgs = [

@@ -26,5 +26,9 @@ in {
     shellAliases = {
       nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#laptop";
     };
+
+    initContent = ''
+      bindkey '^I' autosuggest-accept
+    '';
   };
 }

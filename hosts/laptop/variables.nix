@@ -1,17 +1,21 @@
-{ config, lib, ... }: {
+{
+  config,
+  lib,
+  ...
+}: {
   imports = [
     # Choose theme here
-    ../../themes/tomorrow.nix
+    ../../themes/custom.nix
   ];
 
   config.var = {
     hostname = "laptop";
     username = "vlee";
-    configDirectory = 
+    configDirectory =
       "/home/"
       + config.var.username
       + "nixos-dotfiles/";
-   
+
     keyboardLayout = "us";
     location = "Boston";
     timeZone = "America/New_York";

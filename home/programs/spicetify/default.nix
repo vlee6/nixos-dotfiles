@@ -1,4 +1,10 @@
-{ pkgs, config, lib, inputs, ... }: let
+{
+  pkgs,
+  config,
+  lib,
+  inputs,
+  ...
+}: let
   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
   accent = "${config.lib.stylix.colors.base0B}";
   background = "${config.lib.stylix.colors.base00}";
@@ -14,17 +20,17 @@ in {
     colorScheme = "custom";
 
     customColorScheme = {
-      button = accent;
-      button-active = accent;
-      tab-active = accent;
       player = background;
       main = background;
-      sidebar = background;
+      side = background;
     };
 
     enabledExtensions = with spicePkgs.extensions; [
       adblock
       hidePodcasts
+    ];
+
+    enabledSnippets = with spicePkgs.snippets; [
     ];
   };
 }

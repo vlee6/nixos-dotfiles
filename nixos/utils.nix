@@ -1,4 +1,8 @@
-{ pkgs, config, ... }: let
+{
+  pkgs,
+  config,
+  ...
+}: let
   hostname = config.var.hostname;
   keyboardLayout = config.var.keyboardLayout;
   configDir = config.var.configDirectory;
@@ -14,7 +18,7 @@ in {
     allowReboot = false;
   };
 
-  time = { timeZone = timeZone; };
+  time = {timeZone = timeZone;};
   i18n.defaultLocale = defaultLocale;
   i18n.extraLocaleSettings = {
     LC_ADDRESS = defaultLocale;
@@ -28,18 +32,6 @@ in {
     LC_TIME = defaultLocale;
   };
 
-  services = {
-    xserver = {
-      enable = true;
-      xkb.layout = keyboardLayout;
-      xkb.variant = "";
-    };
-    gnome.gnome-keyring.enable = true;
-    psd = {
-      enable = true;
-      resyncTimer = "10m";
-    };
-  };
   console.keyMap = keyboardLayout;
 
   environment.variables = {
@@ -51,9 +43,17 @@ in {
     BROWSER = "firefox";
   };
 
-  services.libinput.enable = true;
   programs.dconf.enable = true;
   services = {
+    xserver = {
+      enable = true;
+      xkb.layout = keyboardLayout;
+      xkb.variant = "";
+    };
+    psd = {
+      enable = true;
+      resyncTimer = "10m";
+    };
     dbus = {
       enable = true;
       implementation = "broker";
@@ -63,6 +63,8 @@ in {
     upower.enable = true;
     power-profiles-daemon.enable = true;
     udisks2.enable = true;
+    libinput.enable = true;
+    gnome.gnome-keyring.enable = true;
   };
 
   environment.pathsToLink = ["/share/zsh"];

@@ -4,11 +4,12 @@
   ...
 }: {
   programs.waybar.style = let
+    font = config.stylix.fonts.monospace.name;
     fg = config.lib.stylix.colors.base05;
     bg = config.lib.stylix.colors.base07;
   in ''
     * {
-      font-family: "JetBrainsMono Nerd Font", monospace;
+      font-family: "${font}", monospace;
       font-size: 12px;
       font-weight: bold;
       box-shadow: none;

@@ -16,8 +16,7 @@
       with ps; [
         # Dependencies in FHS environment go here
       ]);
-
-    extensions = with pkgs.vscode-extensions; [
+    profiles.default.extensions = with pkgs.vscode-extensions; [
       # Vim
       asvetliakov.vscode-neovim
 
@@ -32,4 +31,6 @@
       platformio.platformio-vscode-ide
     ];
   };
+
+  stylix.targets.vscode.enable = false;
 }

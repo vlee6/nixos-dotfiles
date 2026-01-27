@@ -12,9 +12,12 @@
     ../../home/programs/shell
     ../../home/programs/spicetify
     ../../home/programs/thunar
+    ../../home/programs/vscode
     ../../home/programs/yazi
 
     # System
+    ../../home/system/batsignal
+    ../../home/system/dunst
     ../../home/system/fuzzel
     ../../home/system/hyprland
     ../../home/system/hyprpaper
@@ -31,9 +34,8 @@
       # Apps
       obsidian
       kdePackages.okular
-      textpieces
       mpv
-      resources
+      htop
 
       # Dev
       docker
@@ -44,9 +46,7 @@
       cbonsai
       cmatrix
       fastfetch
-
-      # Backup
-      vscode
+      tty-clock
     ];
 
     inherit (config.var) username;

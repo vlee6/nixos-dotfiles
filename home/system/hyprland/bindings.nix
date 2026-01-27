@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   wayland.windowManager.hyprland.settings = {
     "$mainMod" = "SUPER";
-    "$shiftMod" = "SUPER_SHIFT";
 
     bind =
       [
@@ -32,6 +31,9 @@
         # Screenshot
         "$mainMod SHIFT, S, exec, hyprshot -m region --clipboard"
         "$mainMod CTRL SHIFT, S, exec, hyprshot -m region"
+
+        # Color picker
+        "$mainMod, P, exec, hyprpicker -a"
 
         # Connect to bluetooh
         "$mainMod, B, exec, bluetoothctl devices Paired | head -n 1 | awk '{print $2}' | xargs bluetoothctl connect"

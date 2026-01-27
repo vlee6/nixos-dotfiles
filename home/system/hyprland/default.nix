@@ -48,6 +48,7 @@ in {
     hyprlock
     hypridle
     wf-recorder
+    wl-clipboard
 
     swaybg
 

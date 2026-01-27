@@ -37,23 +37,23 @@
     enable = true;
 
     base16Scheme = {
-      base00 = "27292c"; # Default Background
-      base01 = "35383c"; # Lighter background (Status bars, line number)
-      base02 = "474c52"; # Selection background
-      base03 = "a7a8a7"; # Comments, Invisibles, Line Highlighting
+      base00 = "1d1f21"; # Default Background
+      base01 = "282a2e"; # Lighter background (Status bars, line number)
+      base02 = "373b41"; # Selection background
+      base03 = "969896"; # Comments, Invisibles, Line Highlighting
       base04 = "a7a8a7"; # Dark Foreground (Use for status bars)
       base05 = "d7dad8"; # Default Foreground
       base06 = "d7dad8"; # Light Foreground (Not often used)
-      base07 = "1a1b1c"; # Originally light Background, switched to dark background
+      base07 = "17191a"; # Originally light Background, switched to dark background
 
-      base08 = "d77c79"; # Error
-      base09 = "e6a472"; # Urgent
-      base0A = "f4cf86"; # Warning
-      base0B = "c2c77b";
-      base0C = "9ac9c4";
-      base0D = "92b2ca";
-      base0E = "c0a7c7";
-      base0F = "b06a9b"; # Subject to change
+      base08 = "cc6666"; # Error
+      base09 = "de935f"; # Urgent
+      base0A = "f0c674"; # Warning
+      base0B = "b5bd68";
+      base0C = "8abeb7";
+      base0D = "81a2bE";
+      base0E = "b294bb";
+      base0F = "a3685a"; # Subject to change
     };
 
     cursor = {
