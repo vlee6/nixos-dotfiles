@@ -3,6 +3,7 @@
     # System configuration
     ../../nixos/audio.nix
     ../../nixos/bluetooth.nix
+    ../../nixos/chinese.nix
     ../../nixos/docker.nix
     ../../nixos/fonts.nix
     ../../nixos/home-manager.nix

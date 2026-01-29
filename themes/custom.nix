@@ -69,11 +69,14 @@
       };
 
       sansSerif = {
-        package = pkgs.roboto;
-        name = "Roboto";
+        package = pkgs.lato;
+        name = "Lato";
       };
 
-      serif = config.stylix.fonts.sansSerif;
+      serif = {
+        package = pkgs.cm_unicode;
+        name = "CMU Serif";
+      };
 
       emoji = {
         package = pkgs.noto-fonts-color-emoji;

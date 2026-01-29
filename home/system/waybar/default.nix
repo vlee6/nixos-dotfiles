@@ -41,7 +41,7 @@
         };
 
         memory = {
-          format = "mem: {used}gib";
+          format = "Mem: {used}gib";
           tooltip = false;
         };
 

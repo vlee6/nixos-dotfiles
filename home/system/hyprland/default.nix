@@ -44,7 +44,6 @@ in {
 
     hyprshot
     hyprpicker
-    hyprlock
     hypridle
     wf-recorder
     wl-clipboard
@@ -72,6 +71,7 @@ in {
         "dbus-update-activation-environment --systemd --all &"
         "waybar"
         "hypridle"
+        "fcitx5 -d" # Chinese
       ];
 
       monitor = [
@@ -115,7 +115,7 @@ in {
         gaps_in = gaps_in;
         gaps_out = gaps_out;
         border_size = border_size;
-        layout = "dwindle";
+        layout = "master";
         "col.active_border" = lib.mkForce active_border;
         "col.inactive_border" = lib.mkForce inactive_border;
       };
@@ -150,6 +150,7 @@ in {
         new_status = true;
         allow_small_split = true;
         mfact = 0.5;
+        new_on_top = false;
       };
 
       dwindle = {

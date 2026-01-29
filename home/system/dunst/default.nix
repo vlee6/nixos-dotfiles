@@ -19,7 +19,8 @@ in {
 
     settings = {
       global = {
-        font = lib.mkForce font;
+        width = 300;
+        font = lib.mkForce "${font} 10";
         frame_width = 0;
         separator_color = lib.mkForce urgency_normal;
         origin = "top-right";

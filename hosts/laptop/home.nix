@@ -21,6 +21,7 @@
     ../../home/system/dunst
     ../../home/system/fuzzel
     ../../home/system/hyprland
+    ../../home/system/hyprlock
     ../../home/system/hyprpaper
     ../../home/system/ssh
     ../../home/system/udiskie
@@ -36,7 +37,7 @@
       obsidian
       kdePackages.okular
       mpv
-      htop
+      slack
 
       # Dev
       docker
@@ -48,6 +49,7 @@
       cmatrix
       fastfetch
       tty-clock
+      htop
     ];
 
     inherit (config.var) username;

@@ -13,7 +13,7 @@
         "$mainMod, J, togglesplit"
         "$mainMod, W, killactive"
 
-        "$mainMod, L, exec, systemctl suspend"
+        "$mainMod, L, exec, hyprlock"
 
         # Move focus
         "$mainMod, left, movefocus, l"
@@ -54,8 +54,8 @@
     # Lid and media input
     bindl = [
       # Locking
-      ", switch:off:Lid Switch, exec, hyprlock"
-      ", switch:on:Lid Switch, exec, hyprlock"
+      ", switch:off:Lid Switch, exec, hyprlock --immediate-render --no-fade-in"
+      ", switch:on:Lid Switch, exec, hyprlock --immediate-render --no-fade-in"
 
       # Media controls
       ", XF86AudioNext, exec, playerctl next"
@@ -71,8 +71,8 @@
       ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
       ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
 
-      ", XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+"
-      ", XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-"
+      ", XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 2%+"
+      ", XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 2%-"
     ];
 
     # Mouse
