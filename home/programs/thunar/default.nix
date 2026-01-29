@@ -33,9 +33,9 @@ in {
   # bookmarks for the side pane
   gtk.gtk3.bookmarks = [
     "file:///home/${user}/Downloads Downloads"
-    "file:///home/${user}/Pictures Pictures"
-    "file:///home/${user}/.config/nixos NixOS"
-    "file:///home/${user}/dev Development"
+    "file:///home/${user}/Documents Documents"
+    "file:///home/${user}/repos Repos"
+    "file:///home/${user}/nixos-dotfiles NixOS"
   ];
 
   wayland.windowManager.hyprland.settings = {

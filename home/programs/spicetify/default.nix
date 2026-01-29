@@ -6,7 +6,7 @@
   ...
 }: let
   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-  accent = "${config.lib.stylix.colors.base0B}";
+  foreground = "${config.lib.stylix.colors.base05}";
   background = "${config.lib.stylix.colors.base00}";
 in {
   imports = [inputs.spicetify-nix.homeManagerModules.default];
@@ -23,6 +23,9 @@ in {
       player = background;
       main = background;
       side = background;
+      button = foreground;
+      button-active = foreground;
+      tab-active = foreground;
     };
 
     enabledExtensions = with spicePkgs.extensions; [
