@@ -75,11 +75,11 @@ in {
       ];
 
       monitor = [
-        "eDP-1, 1920x1080@60, 0x1080, 1.3333333"
-        "HDMI-A-1, 1920x1080@75, -100x0, 1"
-        "DP-5, 1920x1080@75, -100x0, 1"
-        "DP-6, 1920x1080@75, -100x0, 1"
-        "DP-7, 1920x1080@75, -100x0, 1"
+        "eDP-1, 1920x1080@60, 250x1080, 1.25"
+        "HDMI-A-1, 1920x1080@75, 0x0, 1"
+        "DP-5, 1920x1080@75, 0x0, 1"
+        "DP-6, 1920x1080@75, 0x0, 1"
+        "DP-7, 1920x1080@75, 0x0, 1"
       ];
 
       env = [
@@ -104,6 +104,7 @@ in {
         "WLR_NO_HARDWARE_CURSORS,1"
         "SDL_VIDEODRIVER,wayland"
         "CLUTTER_BACKEND,wayland"
+        "XCURSOR_SIZE,24"
       ];
 
       cursor = {
@@ -182,6 +183,10 @@ in {
           natural_scroll = true;
           clickfinger_behavior = true;
         };
+      };
+
+      xwayland = {
+        force_zero_scaling = true;
       };
     };
 

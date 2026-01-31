@@ -4,39 +4,45 @@
   ...
 }: {
   programs.nvf.settings.vim = {
-    # Learn more about nvim diagnostics
+    # TODO: Learn more about nvim diagnostics
     diagnostics = {
       enable = true;
       config = {
+        severity = {
+          min = lib.generators.mkLuaInline "vim.diagnostic.severity.ERROR";
+        };
+
         signs = {
-          text = {
-            "vim.diagnostic.severity.Error" = " ";
-            "vim.diagnostic.severity.Warn" = " ";
-            "vim.diagnostic.severity.Hint" = " ";
-            "vim.diagnostic.severity.Info" = " ";
+          text = lib.generators.mkLuaInline ''
+            {
+              [vim.diagnostic.severity.ERROR] = " ",
+              [vim.diagnostic.severity.HINT]  = " ",
+              [vim.diagnostic.severity.INFO]  = " ",
+            }
+          '';
+        };
+
+        virtual_text = {
+          severity = {
+            min = lib.generators.mkLuaInline "vim.diagnostic.severity.ERROR";
+          };
+
+          format = lib.generators.mkLuaInline ''
+            function(diagnostic)
+              return string.format("%s", diagnostic.message)
+            end
+          '';
+        };
+
+        underline = {
+          severity = {
+            min = lib.generators.mkLuaInline "vim.diagnostic.severity.ERROR";
           };
         };
-
-        underline = true;
         update_in_insert = true;
-        virtual_text = {
-          format =
-            lib.generators.mkLuaInline
-            /*
-            lua
-            */
-            ''
-              function(diagnostic)
-                return string.format("%s", diagnostic.message)
-                --return string.format("%s (%s)", diagnostic.message, diagnostic.source)
-              end
-            '';
-        };
       };
 
-      nvim-lint = {
-        enable = true;
-      };
+      nvim-lint.enable = true;
     };
 
     syntaxHighlighting = true;

@@ -6,7 +6,7 @@
       {
         layer = "top";
         position = "top";
-        height = 27;
+        height = 28;
         spacing = 9;
 
         modules-left = [

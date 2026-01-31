@@ -9,12 +9,14 @@
     ../../home/programs/firefox
     ../../home/programs/ghostty
     ../../home/programs/git
+    ../../home/programs/kicad
     ../../home/programs/nvf
     ../../home/programs/shell
     ../../home/programs/spicetify
     ../../home/programs/thunar
     ../../home/programs/vscode
     ../../home/programs/yazi
+    ../../home/programs/zoom
 
     # System
     ../../home/system/batsignal
@@ -38,6 +40,7 @@
       kdePackages.okular
       mpv
       slack
+      resources
 
       # Dev
       docker

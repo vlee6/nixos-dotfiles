@@ -20,8 +20,8 @@
     }
 
     window#waybar {
-      /* background-color: #${bg}; */
-      background-color: transparent;
+      background-color: #${bg};
+      /* background-color: transparent; */
     }
 
     #workspaces button {

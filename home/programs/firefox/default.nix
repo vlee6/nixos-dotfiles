@@ -51,6 +51,8 @@
         id = 0;
         name = "vlee";
         isDefault = true;
+        settings = {
+        };
 
         extensions.packages = with inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
           ublock-origin
