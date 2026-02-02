@@ -31,4 +31,5 @@ in {
     #  bindkey '^I' autosuggest-accept
     # '';
   };
+  programs.pay-respects.enable = true;
 }

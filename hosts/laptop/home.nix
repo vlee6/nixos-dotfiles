@@ -42,6 +42,7 @@
       mpv
       slack
       resources
+      htop
 
       # Dev
       docker
@@ -53,7 +54,8 @@
       cmatrix
       fastfetch
       tty-clock
-      htop
+      cava
+      asciiquarium
     ];
 
     inherit (config.var) username;
