@@ -22,6 +22,7 @@
     ../../home/system/batsignal
     ../../home/system/dunst
     ../../home/system/fuzzel
+    ../../home/system/hypridle
     ../../home/system/hyprland
     ../../home/system/hyprlock
     ../../home/system/hyprpaper

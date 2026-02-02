@@ -1,13 +1,17 @@
-{ config, ... }: let
+{
+  config,
+  lib,
+  ...
+}: let
   animationSpeed = config.theme.animation_speed;
 
-  animationDuration = 
+  animationDuration =
     if animationSpeed == "slow"
     then "4"
     else if animationSpeed == "medium"
     then "2.5"
     else "1.5";
-  borderDuration = 
+  borderDuration =
     if animationSpeed == "slow"
     then "10"
     else if animationSpeed == "medium"
@@ -37,7 +41,7 @@ in {
       animation = [
         "windows, 1, ${animationDuration}, md3_decel, popin 60%"
         "windowsIn, 1, ${animationDuration}, md3_decel, popin 60%"
-        "windowsOut, 1, ${animationDuration}, md3_accel, popin 60%"
+        "windowsOut, 1, ${lib.strings.floatToString ((builtins.fromJSON animationDuration) * 1.5)}, md3_accel, popin 60%"
         "border, 1, ${borderDuration}, default"
         "fade, 1, ${animationDuration}, md3_decel"
         "layersIn, 1, ${animationDuration}, menu_decel, slide"

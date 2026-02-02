@@ -58,6 +58,7 @@
 
         pulseaudio = {
           format = "Vol: {volume}%";
+          format-bluetooth = "Vol: {volume}% 󰂯";
           on-click = "playerctl play-pause";
           tooltip = false;
         };

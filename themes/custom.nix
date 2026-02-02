@@ -69,8 +69,8 @@
       };
 
       sansSerif = {
-        package = pkgs.lato;
-        name = "Lato";
+        package = pkgs.noto-fonts;
+        name = "Noto Sans";
       };
 
       serif = {

@@ -8,9 +8,8 @@
 in {
   fonts = {
     packages = with pkgs; [
-      roboto
-      lato
-      dejavu_fonts
+      corefonts
+      vista-fonts
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
