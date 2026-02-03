@@ -1,5 +1,12 @@
-{ lib, ... }: {
+{lib, ...}: {
   programs.nvf.settings.vim = {
+    globals = {
+      mapleader = " ";
+      netrw_list_hide = "^\\..*";
+      netrw_hide = 1;
+      netrw_banner = 0;
+    };
+
     viAlias = true;
     vimAlias = true;
     withNodeJs = true;

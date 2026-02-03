@@ -41,7 +41,7 @@ in {
       animation = [
         "windows, 1, ${animationDuration}, md3_decel, popin 60%"
         "windowsIn, 1, ${animationDuration}, md3_decel, popin 60%"
-        "windowsOut, 1, ${lib.strings.floatToString ((builtins.fromJSON animationDuration) * 1.5)}, md3_accel, popin 60%"
+        "windowsOut, 1, ${lib.strings.floatToString ((builtins.fromJSON animationDuration) * 2)}, md3_accel, popin 60%"
         "border, 1, ${borderDuration}, default"
         "fade, 1, ${animationDuration}, md3_decel"
         "layersIn, 1, ${animationDuration}, menu_decel, slide"
