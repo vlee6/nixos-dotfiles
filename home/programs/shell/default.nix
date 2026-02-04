@@ -27,9 +27,13 @@ in {
       nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#laptop";
     };
 
-    # initContent = ''
-    #  bindkey '^I' autosuggest-accept
-    # '';
+    # Emacs style navigation since Nvim navigation in shell sucks
+    initContent = ''
+      bindkey -e
+      bindkey "^[[1;5D" backward-word
+      bindkey "^[[1;5C" forward-word
+      bindkey "^H" backward-kill-word
+    '';
   };
   programs.pay-respects.enable = true;
 }

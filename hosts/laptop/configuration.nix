@@ -10,6 +10,7 @@
     ../../nixos/hyprland.nix
     ../../nixos/ly.nix
     ../../nixos/nix.nix
+    ../../nixos/power.nix
     ../../nixos/nix-search-tv.nix
     ../../nixos/systemd-boot.nix
     ../../nixos/users.nix

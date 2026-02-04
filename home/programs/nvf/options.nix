@@ -2,7 +2,7 @@
   programs.nvf.settings.vim = {
     globals = {
       mapleader = " ";
-      netrw_list_hide = "^\\..*";
+      netrw_list_hide = "^\\..*\\|.*\\.swp$";
       netrw_hide = 1;
       netrw_banner = 0;
     };

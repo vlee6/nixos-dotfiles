@@ -6,7 +6,7 @@
   ...
 }: let
   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-  foreground = "${config.lib.stylix.colors.base05}";
+  foreground = "1DB954";
   background = "${config.lib.stylix.colors.base00}";
 in {
   imports = [inputs.spicetify-nix.homeManagerModules.default];
@@ -20,20 +20,19 @@ in {
     colorScheme = "custom";
 
     customColorScheme = {
-      player = background;
       main = background;
       side = background;
+      player = foreground;
       button = foreground;
       button-active = foreground;
+      button-disabled = foreground;
       tab-active = foreground;
+      misc = foreground;
     };
 
     enabledExtensions = with spicePkgs.extensions; [
       adblock
       hidePodcasts
-    ];
-
-    enabledSnippets = with spicePkgs.snippets; [
     ];
   };
 }

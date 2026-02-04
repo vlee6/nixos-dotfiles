@@ -50,7 +50,7 @@
     treesitter = {
       enable = true;
       autotagHtml = true;
-      context.enable = true;
+      context.enable = false;
       highlight.enable = true;
       grammars = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
         typescript

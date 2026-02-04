@@ -1,6 +1,11 @@
-{ inputs, pkgs, ... }: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
     inputs.nvf.homeManagerModules.default
+    ./keymaps.nix
     ./languages.nix
     ./mini.nix
     ./options.nix
