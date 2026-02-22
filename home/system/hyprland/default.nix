@@ -149,7 +149,6 @@ in {
 
       master = {
         new_status = true;
-        allow_small_split = true;
         mfact = 0.5;
         new_on_top = false;
       };
@@ -177,6 +176,7 @@ in {
         kb_layout = kb_layout;
         follow_mouse = 1;
         sensitivity = 0;
+        accel_profile = "flat";
 
         touchpad = {
           scroll_factor = 0.35;

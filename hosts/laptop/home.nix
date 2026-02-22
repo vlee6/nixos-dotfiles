@@ -43,19 +43,23 @@
       slack
       resources
       htop
+      libreoffice
 
       # Dev
       docker
       nodejs
       python3
+      prusa-slicer
 
       # Just cool
+      asciiquarium
+      cava
       cbonsai
       cmatrix
       fastfetch
+      figlet
+      lolcat
       tty-clock
-      cava
-      asciiquarium
     ];
 
     inherit (config.var) username;

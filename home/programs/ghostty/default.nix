@@ -4,6 +4,7 @@
     enableZshIntegration = true;
     settings = {
       custom-shader = "${./shaders/cursor_warp.glsl}";
+      font-feature = ["-calt"];
     };
   };
 }
