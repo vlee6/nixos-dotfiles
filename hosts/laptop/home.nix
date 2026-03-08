@@ -39,17 +39,22 @@
       # Apps
       obsidian
       kdePackages.okular
+      kdePackages.kdenlive
+      audacity
       mpv
       slack
       resources
       htop
       libreoffice
+      obs-studio
 
       # Dev
       docker
       nodejs
       python3
       prusa-slicer
+      arduino-ide
+      ffmpeg
 
       # Just cool
       asciiquarium
