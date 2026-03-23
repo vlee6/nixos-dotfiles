@@ -11,7 +11,7 @@
     networks = {
       "MAKERSPACE" = {
         psk = secrets.makerspace_password;
-        priority = 1;
+        priority = 4;
       };
 
       "Harvard Secure" = {

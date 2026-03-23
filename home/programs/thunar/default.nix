@@ -152,11 +152,11 @@ in {
       </action>
       <action>
         <icon>package-x-generic</icon>
-        <name>Compress here (tar.gz)</name>
+        <name>Compress here (zip)</name>
         <submenu></submenu>
         <unique-id>1700000000000003</unique-id>
-        <command>tar -czvf %n.tar.gz %N</command>
-        <description>Creates a compressed archive (.tar.gz) of selected files/folders.</description>
+        <command>zip -r %n.zip %N</command>
+        <description>Creates a .zip archive of selected files/folders.</description>
         <range>*</range>
         <patterns>*</patterns>
         <directories/>

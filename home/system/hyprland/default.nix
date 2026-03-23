@@ -188,6 +188,10 @@ in {
       xwayland = {
         force_zero_scaling = true;
       };
+
+      windowrule = [
+        "match:float true, no_dim on"
+      ];
     };
 
     # Smart gaps

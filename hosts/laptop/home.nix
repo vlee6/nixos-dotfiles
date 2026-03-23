@@ -55,6 +55,7 @@
       prusa-slicer
       arduino-ide
       ffmpeg
+      caligula
 
       # Just cool
       asciiquarium
