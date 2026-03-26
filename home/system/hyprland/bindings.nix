@@ -6,7 +6,7 @@
       [
         # Essential binds
         "$mainMod, Q, exec, ghostty --working-directory=~"
-        "$mainMod, F, exec, ghostty -e yazi"
+        "$mainMod, F, exec, thunar"
         "$mainMod, SPACE, exec, fuzzel"
 
         "$mainMod, V, togglefloating"

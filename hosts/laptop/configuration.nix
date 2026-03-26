@@ -8,6 +8,7 @@
     ../../nixos/fonts.nix
     ../../nixos/home-manager.nix
     ../../nixos/hyprland.nix
+    ../../nix-ld.nix
     ../../nixos/ly.nix
     ../../nixos/nix.nix
     ../../nixos/power.nix
