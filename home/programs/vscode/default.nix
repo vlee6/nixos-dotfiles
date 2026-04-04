@@ -11,11 +11,16 @@
   programs.vscode = {
     enable = true;
 
+    profiles.default.userSettings = {
+      "workbench.colorTheme" = "Default Dark Modern";
+    };
+
     # Necessary for plugins requiring FHS compiancy
     package = pkgs.vscode.fhsWithPackages (ps:
       with ps; [
         # Dependencies in FHS environment go here
       ]);
+
     profiles.default.extensions = with pkgs.vscode-extensions; [
       # Vim
       asvetliakov.vscode-neovim

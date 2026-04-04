@@ -19,6 +19,11 @@ in {
   nixpkgs.config = {
     allowUnfree = true;
     allowBrown = true;
+    segger-jlink.acceptLicense = true;
+
+    permittedInsecurePackages = [
+      "segger-jlink-qt4-874"
+    ];
   };
   nix = {
     nixPath = ["nixpkgs=${inputs.nixpkgs}"];

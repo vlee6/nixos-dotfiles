@@ -10,6 +10,7 @@
     ../../home/programs/ghostty
     ../../home/programs/git
     ../../home/programs/kicad
+    ../../home/prgrams/nrf
     ../../home/programs/nvf
     ../../home/programs/shell
     ../../home/programs/spicetify
@@ -53,9 +54,9 @@
       nodejs
       python3
       prusa-slicer
-      arduino-ide
       ffmpeg
       caligula
+      arduino-ide
 
       # Just cool
       asciiquarium
