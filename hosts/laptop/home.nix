@@ -10,7 +10,7 @@
     ../../home/programs/ghostty
     ../../home/programs/git
     ../../home/programs/kicad
-    ../../home/prgrams/nrf
+    ../../home/programs/nrf
     ../../home/programs/nvf
     ../../home/programs/shell
     ../../home/programs/spicetify

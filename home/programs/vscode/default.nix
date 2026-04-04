@@ -4,10 +4,6 @@
   lib,
   ...
 }: {
-  home.packages = with pkgs; [
-    vscode.fhs
-  ];
-
   programs.vscode = {
     enable = true;
 
@@ -19,6 +15,9 @@
     package = pkgs.vscode.fhsWithPackages (ps:
       with ps; [
         # Dependencies in FHS environment go here
+        nrf-command-line-tools
+        segger-jlink
+        libusb1
       ]);
 
     profiles.default.extensions = with pkgs.vscode-extensions; [
@@ -31,6 +30,7 @@
       # Languages
       ms-python.python
       ms-vscode.cpptools-extension-pack
+      ms-vscode.cmake-tools
 
       # PlatformIO
       platformio.platformio-vscode-ide

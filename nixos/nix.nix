@@ -19,8 +19,9 @@ in {
   nixpkgs.config = {
     allowUnfree = true;
     allowBrown = true;
-    segger-jlink.acceptLicense = true;
 
+    # Necessary for NRF Development
+    segger-jlink.acceptLicense = true;
     permittedInsecurePackages = [
       "segger-jlink-qt4-874"
     ];

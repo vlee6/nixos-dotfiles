@@ -60,6 +60,11 @@ in {
       implementation = "broker";
       packages = with pkgs; [gcr gnome-settings-daemon];
     };
+    udev.packages = [
+      # Necessary for NRF development
+      pkgs.nrf-udev
+      pkgs.segger-jlink
+    ];
     gvfs.enable = true;
     udisks2.enable = true;
     libinput.enable = true;
@@ -90,6 +95,14 @@ in {
     unrar
     p7zip
     cacert
+    nrf-command-line-tools
+  ];
+
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    segger-jlink
+    libusb1
+    stdenv.cc.cc
   ];
 
   xdg.portal = {
