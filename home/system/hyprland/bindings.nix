@@ -10,7 +10,7 @@
         "$mainMod, SPACE, exec, fuzzel"
 
         "$mainMod, V, togglefloating"
-        "$mainMod, J, togglesplit"
+        "$mainMod, J, centerwindow"
         "$mainMod, W, killactive"
 
         "$mainMod, L, exec, hyprlock"
@@ -33,7 +33,7 @@
         "$mainMod CTRL SHIFT, S, exec, hyprshot -m region"
 
         # Color picker
-        "$mainMod, P, exec, hyprpicker -a"
+        "$mainMod SHIFT, P, exec, hyprpicker -a"
 
         # Connect to bluetooh
         "$mainMod, B, exec, bluetoothctl devices Paired | head -n 1 | awk '{print $2}' | xargs bluetoothctl connect"

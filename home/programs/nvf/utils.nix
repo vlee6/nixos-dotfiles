@@ -5,7 +5,7 @@
       leetcode-nvim.enable = true;
 
       motion = {
-        leap.enable = true;
+        # leap.enable = true;
       };
     };
 

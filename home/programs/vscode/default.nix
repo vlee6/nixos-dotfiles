@@ -7,10 +7,6 @@
   programs.vscode = {
     enable = true;
 
-    profiles.default.userSettings = {
-      "workbench.colorTheme" = "Default Dark Modern";
-    };
-
     # Necessary for plugins requiring FHS compiancy
     package = pkgs.vscode.fhsWithPackages (ps:
       with ps; [
@@ -26,6 +22,7 @@
 
       # Tools
       ms-vscode.live-server
+      ms-toolsai.jupyter
 
       # Languages
       ms-python.python

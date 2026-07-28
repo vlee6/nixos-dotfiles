@@ -1,4 +1,8 @@
-{ config, pkgs, ... }: let
+{
+  config,
+  pkgs,
+  ...
+}: let
   username = config.var.username;
 in {
   programs.zsh.enable = true;
@@ -8,7 +12,7 @@ in {
     users.${username} = {
       isNormalUser = true;
       description = "${username} account";
-      extraGroups = ["networkmanager" "wheel"];
+      extraGroups = ["networkmanager" "wheel" "input" "dialout"];
     };
   };
 }

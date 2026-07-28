@@ -80,6 +80,8 @@ in {
         "DP-5, 1920x1080@75, 0x0, 1"
         "DP-6, 1920x1080@75, 0x0, 1"
         "DP-7, 1920x1080@75, 0x0, 1"
+
+        "DP-2, 1920x1080@60, 0x0, 1, mirror, eDP-1"
       ];
 
       env = [
@@ -166,7 +168,6 @@ in {
 
       misc = {
         force_default_wallpaper = 1;
-        vfr = true;
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
         focus_on_activate = true;
@@ -174,6 +175,7 @@ in {
 
       input = {
         kb_layout = kb_layout;
+        kb_options = "caps:escape_shifted_capslock";
         follow_mouse = 1;
         sensitivity = 0;
         accel_profile = "flat";

@@ -5,20 +5,10 @@
 }: {
   imports = [
     # Programs
-    ../../home/programs/anki
-    ../../home/programs/arduino-ide
-    ../../home/programs/firefox
     ../../home/programs/ghostty
     ../../home/programs/git
-    ../../home/programs/kicad
-    ../../home/programs/nrf
     ../../home/programs/nvf
     ../../home/programs/shell
-    ../../home/programs/spicetify
-    ../../home/programs/thunar
-    ../../home/programs/vscode
-    ../../home/programs/yazi
-    ../../home/programs/zoom
 
     # System
     ../../home/system/batsignal
@@ -39,30 +29,16 @@
     # Packages installed here don't need to be configured
     packages = with pkgs; [
       # Apps
-      obsidian
-      kdePackages.okular
-      kdePackages.kdenlive
-      audacity
-      mpv
-      slack
       resources
-      htop
-      libreoffice
-      obs-studio
-      figma-agent
-      video-trimmer
-      teams-for-linux
 
       # Dev
+      nixos-install-tools
       docker
       nodejs
       python3
-      prusa-slicer
       ffmpeg
       caligula
-      conda
       ngrok
-      github-desktop
 
       # Just cool
       asciiquarium

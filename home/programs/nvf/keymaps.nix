@@ -34,6 +34,30 @@
         silent = true;
         desc = "Open navbuddy";
       }
+      {
+        key = "<Up>";
+        action = "<Nop>";
+        mode = "i";
+        desc = "Disable Up arrow in insert mode";
+      }
+      {
+        key = "<Down>";
+        action = "<Nop>";
+        mode = "i";
+        desc = "Disable Down arrow in insert mode";
+      }
+      {
+        key = "<Left>";
+        action = "<Nop>";
+        mode = "i";
+        desc = "Disable Left arrow in insert mode";
+      }
+      {
+        key = "<Right>";
+        action = "<Nop>";
+        mode = "i";
+        desc = "Disable Right arrow in insert mode";
+      }
     ];
   };
 }

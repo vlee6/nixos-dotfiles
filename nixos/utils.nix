@@ -48,8 +48,11 @@ in {
   services = {
     xserver = {
       enable = true;
-      xkb.layout = keyboardLayout;
-      xkb.variant = "";
+      xkb = {
+        layout = keyboardLayout;
+        variant = "";
+        options = "caps:escape_shifted_capslock";
+      };
     };
     psd = {
       enable = true;
@@ -64,6 +67,9 @@ in {
       # Necessary for NRF development
       pkgs.nrf-udev
       pkgs.segger-jlink
+      # Necessary for platformio
+      pkgs.platformio-core
+      pkgs.openocd
     ];
     gvfs.enable = true;
     udisks2.enable = true;

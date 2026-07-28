@@ -15,9 +15,11 @@ in {
       noto-fonts-cjk-serif
       nerd-fonts.jetbrains-mono
       openmoji-color
+      google-fonts
     ];
 
     fontconfig = {
+      enable = true;
       defaultFonts = {
         sansSerif = ["${sansSerif}"];
         serif = ["${serif}"];

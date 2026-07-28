@@ -1,11 +1,12 @@
-{
+{pkgs, ...}: {
   services.batsignal = {
     enable = true;
     extraArgs = [
       "-w"
-      "30" # Warning at 25%
+      "30"
       "-c"
-      "20" # Critical at 20%
+      "20"
     ];
   };
+  systemd.user.services.batsignal.Install.WantedBy = ["graphical-session.target"];
 }

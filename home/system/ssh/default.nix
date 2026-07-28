@@ -1,18 +1,16 @@
 {
   programs.ssh = {
     enable = true;
-    enableDefaultConfig = false;
-
     matchBlocks = {
-      "github.com" = {
+      "github.com-harvard" = {
         hostname = "github.com";
         user = "git";
-  
-        identitiesOnly = true;
-        identityFile = [
-          "~/.ssh/vleeharvard"
-          "~/.ssh/vlee6"
-        ];
+        identityFile = "~/.ssh/vleeharvard";
+      };
+      "github.com-personal" = {
+        hostname = "github.com";
+        user = "git";
+        identityFile = "~/.ssh/vlee6";
       };
     };
   };

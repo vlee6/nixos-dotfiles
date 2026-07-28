@@ -98,7 +98,7 @@
 
       html.enable = true;
       css.enable = true;
-      ts.enable = true;
+      typescript.enable = true;
 
       markdown = {
         enable = true;

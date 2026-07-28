@@ -23,9 +23,15 @@ in {
       size = 10000;
     };
 
-    shellAliases = {
-      nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#laptop";
-    };
+    shellAliases =
+      {
+      }
+      // lib.optionalAttrs (config.var.hostname == "laptop") {
+        nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#laptop";
+      }
+      // lib.optionalAttrs (config.var.hostname == "fabmind-server") {
+        nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#fabmind-server";
+      };
 
     # Emacs style navigation since Nvim navigation in shell sucks
     initContent = ''

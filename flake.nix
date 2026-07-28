@@ -56,6 +56,26 @@
           ./hosts/laptop/configuration.nix
         ];
       };
+
+      fabmind-server = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+
+        specialArgs = {
+          secrets = import "${inputs.secrets_dir}/secrets.nix";
+        };
+
+        modules = [
+          {
+            nixpkgs.overlays = [];
+            _module.args = {
+              inherit inputs;
+            };
+          }
+          inputs.home-manager.nixosModules.home-manager
+          inputs.stylix.nixosModules.stylix
+          ./hosts/fabmind-server/configuration.nix
+        ];
+      };
     };
   };
 }
