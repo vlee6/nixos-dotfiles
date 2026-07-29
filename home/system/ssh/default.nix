@@ -1,7 +1,9 @@
 {
   programs.ssh = {
     enable = true;
-    matchBlocks = {
+    enableDefaultConfig = false;
+
+    settings = {
       "github.com-harvard" = {
         hostname = "github.com";
         user = "git";

@@ -16,6 +16,7 @@
   ];
 
   home-manager.users."${config.var.username}" = import ./home.nix;
+  networking.hostName = "fabmind-server";
 
   system.stateVersion = "25.11";
 }

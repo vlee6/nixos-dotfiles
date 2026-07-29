@@ -8,5 +8,4 @@
       "20"
     ];
   };
-  systemd.user.services.batsignal.Install.WantedBy = ["graphical-session.target"];
 }

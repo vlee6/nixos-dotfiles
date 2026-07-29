@@ -22,6 +22,7 @@
   ];
 
   home-manager.users."${config.var.username}" = import ./home.nix;
+  networking.hostName = "laptop";
 
   system.stateVersion = "25.11";
 }

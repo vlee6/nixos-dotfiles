@@ -56,6 +56,9 @@ in {
 
   wayland.windowManager.hyprland = {
     enable = true;
+    configType = "hyprlang";
+    flags = ["-c ~/.config/hypr/hyprland.conf"];
+
     xwayland.enable = true;
     systemd = {
       enable = false;
