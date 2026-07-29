@@ -19,7 +19,7 @@ in {
   users.users.${username} = {
     isNormalUser = true;
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJxBqZ96lJ4wfDfu9Lp9iwK8mYahz0pCAthq9gNNlLjZ ${username}@laptop"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMw7rODwcEweRCCb89gX7P6hwI+0o5zcdt5gx9/aVgGb ${username}@laptop"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBZzyynU03vsvVELsel6hMX/HP75iwoP+NPja8vKVJNC ${username}@fabmind-server"
     ];
   };
