@@ -20,9 +20,8 @@ in {
       AllowUsers = ["vlee"];
     };
   };
-  networking.firewall.allowedTCPPorts = [22];
 
-  users.${username} = {
-    openssh.autorizedKey.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJxBqZ96lJ4wfDfu9Lp9iwK8mYahz0pCAthq9gNNlLjZ"];
+  users.users.${username} = {
+    openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJxBqZ96lJ4wfDfu9Lp9iwK8mYahz0pCAthq9gNNlLjZ"];
   };
 }

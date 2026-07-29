@@ -10,6 +10,8 @@
   defaultLocale = config.var.defaultLocale;
   autoUpgrade = config.var.autoUpgrade;
 in {
+  networking.hostName = "${hostname}";
+
   system.autoUpgrade = {
     enable = autoUpgrade;
     dates = "04:00";

@@ -5,22 +5,12 @@
 }: {
   imports = [
     # Programs
-    ../../home/programs/ghostty
     ../../home/programs/git
     ../../home/programs/nvf
     ../../home/programs/shell
 
     # System
-    ../../home/system/batsignal
-    ../../home/system/dunst
-    ../../home/system/fuzzel
-    ../../home/system/hypridle
-    ../../home/system/hyprland
-    ../../home/system/hyprlock
-    ../../home/system/hyprpaper
     ../../home/system/ssh
-    ../../home/system/udiskie
-    ../../home/system/waybar
 
     ./variables.nix
   ];
@@ -57,5 +47,6 @@
     stateVersion = "25.11";
   };
 
+  dconf.enable = false;
   programs.home-manager.enable = true;
 }
