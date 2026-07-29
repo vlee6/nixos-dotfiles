@@ -6,10 +6,10 @@
     ../../nixos/home-manager.nix
     ../../nixos/hyprland.nix
     ../../nixos/nix.nix
-    ../../nixos/systemd-boot.nix
+    # ../../nixos/systemd-boot.nix
     ../../nixos/users.nix
     ../../nixos/utils.nix
-    ../../nixos/wifi.nix
+    # ../../nixos/wifi.nix
 
     ./hardware-configuration.nix
     ./variables.nix
