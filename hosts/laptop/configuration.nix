@@ -10,12 +10,12 @@
     ../../nixos/hyprland.nix
     ../../nixos/ly.nix
     ../../nixos/nix.nix
+    ../../nixos/nix-ld.nix
     ../../nixos/power.nix
     ../../nixos/nix-search-tv.nix
     ../../nixos/systemd-boot.nix
     ../../nixos/users.nix
     ../../nixos/utils.nix
-    ../../nixos/uv-ld.nix
     ../../nixos/wifi.nix
 
     ./hardware-configuration.nix

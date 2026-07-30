@@ -6,10 +6,10 @@
     ../../nixos/home-manager.nix
     ../../nixos/hyprland.nix
     ../../nixos/nix.nix
+    ../../nixos/nix-ld.nix
     ../../nixos/ssh-server.nix
     ../../nixos/users.nix
     ../../nixos/utils.nix
-    ../../nixos/uv-ld.nix
     ../../nixos/wsl.nix
 
     # ./hardware-configuration.nix
