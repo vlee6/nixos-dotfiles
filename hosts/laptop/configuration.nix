@@ -15,6 +15,7 @@
     ../../nixos/systemd-boot.nix
     ../../nixos/users.nix
     ../../nixos/utils.nix
+    ../../nixos/uv-ld.nix
     ../../nixos/wifi.nix
 
     ./hardware-configuration.nix
