@@ -15,6 +15,7 @@
     ../../home/programs/nvf
     ../../home/programs/shell
     ../../home/programs/spicetify
+    ../../home/programs/uv
     ../../home/programs/thunar
     ../../home/programs/vscode
     ../../home/programs/yazi

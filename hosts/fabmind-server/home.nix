@@ -8,6 +8,7 @@
     ../../home/programs/git
     ../../home/programs/nvf
     ../../home/programs/shell
+    ../../home/programs/uv
 
     # System
     ../../home/system/ssh
