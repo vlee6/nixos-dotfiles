@@ -45,6 +45,8 @@
     inherit (config.var) username;
     homeDirectory = "/home/" + config.var.username;
 
+    pointerCursor.enable = true;
+
     stateVersion = "25.11";
   };
 

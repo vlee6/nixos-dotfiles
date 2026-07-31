@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   environment = {
     localBinInPath = true;
   };
@@ -16,6 +20,7 @@
       # System C Libraries
       zlib
       glib
+      glibc
       libffi
       openssl
       readline
@@ -51,6 +56,7 @@
       cudaPackages.libcurand
       cudaPackages.libcusparse
       cudaPackages.cudnn
+      config.hardware.nvidia.package
     ];
   };
 }

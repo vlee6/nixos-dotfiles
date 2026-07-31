@@ -8,6 +8,7 @@
     ../../nixos/nix.nix
     ../../nixos/nix-ld.nix
     ../../nixos/ssh-server.nix
+    ../../nixos/tailscale.nix
     ../../nixos/users.nix
     ../../nixos/utils.nix
     ../../nixos/wsl.nix

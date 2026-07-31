@@ -1,6 +1,8 @@
 {
   home.sessionVariables = {
     UV_TORCH_BACKEND = "cu126";
+    TRITON_LIBCUDA_PATH = "/run/opengl-driver/lib";
+    TRITON_CUDA_LIB_PATH = "/run/opengl-driver/lib";
   };
 
   programs.uv = {

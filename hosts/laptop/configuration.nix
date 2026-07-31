@@ -14,6 +14,7 @@
     ../../nixos/power.nix
     ../../nixos/nix-search-tv.nix
     ../../nixos/systemd-boot.nix
+    ../../nixos/tailscale.nix
     ../../nixos/users.nix
     ../../nixos/utils.nix
     ../../nixos/wifi.nix
