@@ -114,18 +114,9 @@ in {
     portalPackage = null;
 
     settings = {
-      # Disable hypenated exec-once to stop Home Manager from writing `hl.exec-once`
+      # Disable both exec-once and exec_once in settings
       exec-once = lib.mkForce null;
-
-      # Use exec_once (with underscore) for valid Lua output (`hl.exec_once`)
-      exec_once = [
-        "systemctl --user enable --now hyprpaper.service"
-        "dbus-update-activation-environment --systemd --all &"
-        "waybar"
-        "hypridle"
-        "fcitx5 -d"
-        "systemctl --user start hyprpolkitagent"
-      ];
+      exec_once = lib.mkForce null;
 
       monitor = [
         {
@@ -341,7 +332,7 @@ in {
           (bind "SUPER + mouse:272" dsp.drag)
           (bind "SUPER + mouse:273" dsp.resize)
 
-          # Locked / Lid & Media keys (bindl)
+          # Locked / Lid & Media keys
           (bindOpts ", switch:off:Lid Switch" (dsp.exec "hyprlock --immediate-render --no-fade-in") {locked = true;})
           (bindOpts ", switch:on:Lid Switch" (dsp.exec "hyprlock --immediate-render --no-fade-in") {locked = true;})
 
@@ -350,31 +341,31 @@ in {
           (bindOpts ", XF86AudioPlay" (dsp.exec "playerctl play-pause") {locked = true;})
           (bindOpts ", XF86AudioPrev" (dsp.exec "playerctl previous") {locked = true;})
 
-          # Multimedia volume & brightness keys (bindel)
+          # Multimedia volume & brightness keys
           (bindOpts ", XF86AudioRaiseVolume" (dsp.exec "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+") {
             locked = true;
-            repeat = true;
+            repeating = true;
           })
           (bindOpts ", XF86AudioLowerVolume" (dsp.exec "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-") {
             locked = true;
-            repeat = true;
+            repeating = true;
           })
           (bindOpts ", XF86AudioMute" (dsp.exec "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle") {
             locked = true;
-            repeat = true;
+            repeating = true;
           })
           (bindOpts ", XF86AudioMicMute" (dsp.exec "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle") {
             locked = true;
-            repeat = true;
+            repeating = true;
           })
 
           (bindOpts ", XF86MonBrightnessUp" (dsp.exec "brightnessctl -e4 -n2 set 2%+") {
             locked = true;
-            repeat = true;
+            repeating = true;
           })
           (bindOpts ", XF86MonBrightnessDown" (dsp.exec "brightnessctl -e4 -n2 set 2%-") {
             locked = true;
-            repeat = true;
+            repeating = true;
           })
         ]
         ++ workspaceBinds;
@@ -394,6 +385,15 @@ in {
       hl.windowrule("rounding 0, match:float 0, match:workspace w[tv1]s[false]")
       hl.windowrule("border_size 0, match:float 0, match:workspace f[1]s[false]")
       hl.windowrule("rounding 0, match:float 0, match:workspace f[1]s[false]")
+
+      hl.on("hyprland.start", function()
+        hl.exec_cmd("systemctl --user enable --now hyprpaper.service")
+        hl.exec_cmd("dbus-update-activation-environment --systemd --all &")
+        hl.exec_cmd("waybar")
+        hl.exec_cmd("hypridle")
+        hl.exec_cmd("fcitx5 -d")
+        hl.exec_cmd("systemctl --user start hyprpolkitagent")
+      end)
     '';
   };
 }
