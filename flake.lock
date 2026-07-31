@@ -714,9 +714,23 @@
         "hyprland": "hyprland",
         "nixpkgs": "nixpkgs_2",
         "nvf": "nvf",
+        "secrets_dir": "secrets_dir",
         "spicetify-nix": "spicetify-nix",
         "stylix": "stylix",
         "wsl": "wsl"
+      }
+    },
+    "secrets_dir": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1768767074,
+        "narHash": "sha256-o5vWo4+Xjl7bgX0egacWNd1dR94tajQwcLQ9MEtc4qk=",
+        "path": "/home/vlee/nixos-secrets",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/vlee/nixos-secrets",
+        "type": "path"
       }
     },
     "spicetify-nix": {

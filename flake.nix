@@ -30,14 +30,14 @@
     };
 
     wsl = {
-      url = "github:nix-community/NixOS-WSL/main"; 
+      url = "github:nix-community/NixOS-WSL/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # secrets_dir = {
-    #   url = "path:/home/vlee/nixos-secrets";
-    #   flake = false;
-    # };
+    secrets_dir = {
+      url = "path:/home/vlee/nixos-secrets";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {nixpkgs, ...}: {
@@ -45,9 +45,9 @@
       laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
-        # specialArgs = {
-        #   secrets = import "${inputs.secrets_dir}/secrets.nix";
-        # };
+        specialArgs = {
+          secrets = import "${inputs.secrets_dir}/secrets.nix";
+        };
 
         modules = [
           {
