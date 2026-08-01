@@ -11,7 +11,7 @@
     networks = {
       "MAKERSPACE" = {
         psk = secrets.makerspace_password;
-        priority = 4;
+        priority = 3;
       };
 
       "Harvard Secure" = {
@@ -24,7 +24,7 @@
           private_key="/etc/cert/vlee.key"
           private_key_passwd="${secrets.harvard_private_key_password}"
         '';
-        priority = 3;
+        priority = 4;
       };
 
       "eduroam" = {

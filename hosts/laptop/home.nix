@@ -29,7 +29,6 @@
     ../../home/system/hyprland
     ../../home/system/hyprlock
     ../../home/system/hyprpaper
-    ../../home/system/ssh
     ../../home/system/udiskie
     ../../home/system/waybar
 

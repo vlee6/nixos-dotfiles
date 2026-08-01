@@ -23,6 +23,7 @@
   startupScript = pkgs.writeShellScriptBin "start" ''
     ${pkgs.waybar}/bin/waybar &
     ${pkgs.hypridle}/bin/hypridle &
+    systemctl --user start hyprpolitagent &
   '';
 in {
   imports = [
@@ -34,6 +35,7 @@ in {
     hyprshot
     hyprpicker
     hypridle
+    hyprpolkitagent
     wf-recorder
     wl-clipboard
 

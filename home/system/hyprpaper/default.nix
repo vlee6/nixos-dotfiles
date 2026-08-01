@@ -7,10 +7,8 @@
     };
   };
 
-  systemd.user.services.hyprpaper.Unit.After =
-    lib.mkForce "graphical-session.target";
-
-  wayland.windowManager.hyprland.settings.exec-once = [
-    "systemctl --user enable --now hyprpaper.service"
-  ];
+  systemd.user.services.hyprpaper = {
+    Unit.After = lib.mkForce "graphical-session.target";
+    Install.WantedBy = ["hyprland-session.target" "graphical-session.target"];
+  };
 }
