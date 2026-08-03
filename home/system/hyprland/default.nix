@@ -23,6 +23,7 @@
   startupScript = pkgs.writeShellScriptBin "start" ''
     ${pkgs.waybar}/bin/waybar &
     ${pkgs.hypridle}/bin/hypridle &
+    ${pkgs.hyprpaper}/bin/hyprpaper &
     systemctl --user start hyprpolitagent &
   '';
 in {
