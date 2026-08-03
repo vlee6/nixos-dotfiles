@@ -10,9 +10,6 @@
     ../../home/programs/shell
     ../../home/programs/uv
 
-    # System
-    ../../home/system/ssh
-
     ./variables.nix
   ];
 

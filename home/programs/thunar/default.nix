@@ -38,14 +38,6 @@ in {
     "file:///home/${user}/nixos-dotfiles NixOS"
   ];
 
-  wayland.windowManager.hyprland.settings = {
-    windowrule = [
-      "size 900 600, match:class ^(thunar)$, match:float 1"
-      "center 1, match:class ^(thunar)$, match:float 1"
-      "max_size 900 600, match:class ^(thunar)$, match:float 1"
-    ];
-  };
-
   home.file.".config/xarchiver/xarchiverrc".text = ''
     [xarchiver]
     preferred_format=0

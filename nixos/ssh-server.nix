@@ -23,4 +23,8 @@ in {
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBZzyynU03vsvVELsel6hMX/HP75iwoP+NPja8vKVJNC ${username}@fabmind-server"
     ];
   };
+
+  environment.shellAliases = {
+    nvidia-smi = "/usr/lib/wsl/lib/nvidia-smi";
+  };
 }
