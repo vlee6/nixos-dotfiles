@@ -25,6 +25,7 @@ in {
   };
 
   environment.shellAliases = {
+    watch-nvidia-smi = "watch -n 1 /usr/lib/wsl/lib/nvidia-smi";
     nvidia-smi = "/usr/lib/wsl/lib/nvidia-smi";
   };
 }
