@@ -26,6 +26,8 @@
     ${pkgs.hyprpaper}/bin/hyprpaper &
     systemctl --user start hyprpolitagent &
   '';
+
+  env = key: value: {_args = [key value];};
 in {
   imports = [
     ./animations.nix
@@ -55,8 +57,44 @@ in {
         {
           output = "eDP-1";
           mode = "1920x1080@60";
-          position = "0x0";
+          position = "250x1080";
           scale = 1.25;
+        }
+
+        {
+          output = "HDMI-A-1";
+          mode = "1920x1080@75";
+          position = "0x0";
+          scale = 1;
+        }
+
+        {
+          output = "DP-5";
+          mode = "1920x1080@75";
+          position = "0x0";
+          scale = 1;
+        }
+
+        {
+          output = "DP-6";
+          mode = "1920x1080@75";
+          position = "0x0";
+          scale = 1;
+        }
+
+        {
+          output = "DP-7";
+          mode = "1920x1080@75";
+          position = "0x0";
+          scale = 1;
+        }
+
+        {
+          output = "DP-2";
+          mode = "1920x1080@60";
+          position = "0x0";
+          scale = 1;
+          mirror = "eDP-1";
         }
       ];
 
@@ -110,6 +148,10 @@ in {
           mfact = 0.5;
           new_on_top = false;
         };
+
+        xwayland = {
+          force_zero_scaling = true;
+        };
       };
 
       on = {
@@ -154,6 +196,24 @@ in {
             end
           '';
         }
+      ];
+
+      env = [
+        (env "XDG_CURRENT_DESKTOP" "Hyprland")
+        (env "XDG_SESSION_TYPE" "wayland")
+        (env "XDG_SESSION_DESKTOP" "Hyprland")
+
+        (env "MOZ_ENABLE_WAYLAND" "1")
+        (env "ANKI_WAYLAND" "1")
+
+        (env "QT_QPA_PLATFORM" "wayland,xcb")
+        (env "QT_WAYLAND_DISABLE_WINDOWDECORATION" "1")
+
+        (env "ELECTRON_OZONE_PLATFORM_HINT" "auto")
+        (env "NIXOS_OZONE_WL" "1")
+
+        (env "SDL_VIDEODRIVER" "wayland")
+        (env "CLUTTER_BACKEND" "wayland")
       ];
     };
 

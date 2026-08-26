@@ -15,4 +15,9 @@
   programs.nvf = {
     enable = true;
   };
+
+  home.packages = with pkgs; [
+    ueberzugpp # Necessary for nvim image support
+    imagemagick
+  ];
 }

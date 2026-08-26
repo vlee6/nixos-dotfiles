@@ -43,6 +43,18 @@
       "GIGANET_5G" = {
         psk = secrets.giganet_password;
       };
+
+      "Porter Event Room Guest 5" = {
+        psk = secrets.porter_event_room_password;
+      };
+
+      "Alpha5G" = {
+        psk = secrets.jiebins_house_password;
+      };
+
+      "cafe_wifi" = {
+        psk = secrets.alexs_house_password;
+      };
     };
   };
 

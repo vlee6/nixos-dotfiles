@@ -7,7 +7,11 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     hyprland.url = "github:hyprwm/Hyprland";
-    nvf.url = "github:notashelf/nvf";
+
+    nvf = {
+      url = "github:NotAShelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -75,6 +79,7 @@
           inputs.wsl.nixosModules.default
           inputs.home-manager.nixosModules.home-manager
           inputs.stylix.nixosModules.stylix
+          inputs.nvf.homeManagerModules.default
           ./hosts/fabmind-server/configuration.nix
         ];
       };

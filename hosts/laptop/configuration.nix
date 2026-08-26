@@ -19,6 +19,8 @@
     ../../nixos/utils.nix
     ../../nixos/wifi.nix
 
+    # ../../nixos/nosleep.nix
+
     ./hardware-configuration.nix
     ./variables.nix
   ];

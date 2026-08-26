@@ -111,6 +111,11 @@ in {
             locked = true;
             repeat = true;
           })
+
+          # Laptop lid
+          (bindOpts "switch:on:Lid Switch" (dsp.exec "hyprlock --immediate-render --no-fade-in & sleep 0.2; systemctl suspend") {
+            locked = true;
+          })
         ]
         ++ workspaceBinds;
     };

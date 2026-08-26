@@ -2,10 +2,31 @@
   programs.nvf.settings.vim = {
     utility = {
       surround.enable = true;
-      leetcode-nvim.enable = true;
 
-      motion = {
-        # leap.enable = true;
+      # Cache isn't being created?:
+      leetcode-nvim = {
+        enable = true;
+        setupOpts = {
+          lang = "cpp";
+          image_support = true;
+        };
+      };
+
+      images = {
+        image-nvim = {
+          enable = true;
+          setupOpts = {
+            backend = "kitty"; # Works natively with Ghostty
+            processor = "magick_cli";
+            integrations = {
+              markdown = {
+                enabled = true;
+                download_remote_images = true;
+                clear_in_insert_mode = false;
+              };
+            };
+          };
+        };
       };
     };
 
